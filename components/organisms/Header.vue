@@ -10,7 +10,8 @@
               <Search />
             </div>
 
-            <button @click="$emit('tootlgeShowAside')">
+            <button @click="$emit('tootlgeShowAside')" class="flex gap-2 items-center">
+              <span class="text-white uppercase">Categorias</span>
               <List color="white" :size="32" />
             </button>
         </div>

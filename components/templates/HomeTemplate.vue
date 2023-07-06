@@ -1,7 +1,8 @@
 <template>
   <Header @tootlgeShowAside="tootlgeShowAside"/>
-  <main class="overflow-y-hidden overscroll-y-none w-full">
+  <main class="w-full">
     <Aside :show="data" @tootlgeShowAside="tootlgeShowAside"/>
+    <HomeBanner />
   </main>
 </template>
 
