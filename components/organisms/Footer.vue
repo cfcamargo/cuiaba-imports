@@ -31,7 +31,7 @@
               </NuxtLink>
             </li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-l-4 hover:px-2 border-zinc-600">
-              <NuxtLink>
+              <NuxtLink to="/shop">
                 Loja
               </NuxtLink>
             </li>
