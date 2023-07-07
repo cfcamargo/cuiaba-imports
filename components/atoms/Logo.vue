@@ -1,5 +1,5 @@
 <template>
-  <svg :width="icon_width"  viewBox="0 0 114 64" fill="none" :class="color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <svg :width="icon_width" viewBox="0 0 114 64" fill="none" :class="color" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <rect width="114" height="64" fill="url(#pattern0)"/>
     <defs>
       <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -13,7 +13,7 @@
 <script setup lang="ts">
   const props = defineProps({
     color: { type: String , default: 'fill-current' },
-    icon_width: { type: Number, default: "50"}
+    icon_width: { type: Number, default: 50}
 
   })
 </script>

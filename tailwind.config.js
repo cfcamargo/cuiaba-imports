@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'home-banner': "url('/home_banner.png')",
+        'tecnical-cel': "url('/tecnical_cel.png')",
       },
       screens: {
         'xs': '360px',
