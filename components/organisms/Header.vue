@@ -6,18 +6,18 @@
                 <Logo :icon_width="80"/>
             </NuxtLink>
 
-            <div>
+            <div class="xs:hidden md:flex">
               <Search />
             </div>
 
-            <button @click="$emit('tootlgeShowAside')" class="flex gap-2 items-center">
-              <span class="text-white uppercase">Categorias</span>
+            <button @click="toogleShowAside" class="flex gap-2 items-center">
+              <span class="text-white uppercase xs:hidden md:inline">Categorias</span>
               <List color="white" :size="32" />
             </button>
         </div>
       </Container>
-      <nav class="w-full h-[40px] flex justify-center items-center bg-zinc-800">
-          <ul class="flex items-center gap-10 font-light">
+      <nav class="w-full h-[40px] flex justify-center items-center xs:bg-zinc-900 md:bg-zinc-800">
+          <ul class="xs:hidden md:flex items-center gap-10 font-light ">
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
               <NuxtLink>
                   Home
@@ -44,13 +44,20 @@
               </NuxtLink>
             </li>
           </ul>
+          <div class="xs:flex justify-center md:hidden">
+            <Search />
+          </div>
       </nav>
     </header>
+    <Aside :show="asideShow" @toogleShowAside="toogleShowAside"/>
 </template>
 
 <script setup lang="ts">
 import { List } from 'lucide-vue-next';
+const asideShow = ref(false)
 
-defineEmits(['tootlgeShowAside'])
+function toogleShowAside(){
+  asideShow.value = !asideShow.value
+}
 
 </script>

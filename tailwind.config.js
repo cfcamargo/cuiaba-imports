@@ -13,6 +13,9 @@ module.exports = {
       backgroundImage: {
         'home-banner': "url('/home_banner.png')",
       },
+      screens: {
+        'xs': '360px',
+      }
     },
   },
   plugins: [],
