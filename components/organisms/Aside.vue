@@ -60,35 +60,4 @@ const emits = defineEmits(['toogleShowAside'])
    show : Boolean
  })
 
-const outsideElement = ref(null);
-
-const isVisible = ref(props.show)
-
-const isClickedOutsideElement = (event) => {
-  if (isVisible && (!outsideElement.value || !outsideElement.value.contains(event.target))) {
-    emits('toogleShowAside')
-  }
-};
-
-onMounted(() => {
-  // Adiciona um ouvinte de evento de clique à janela
-  window.addEventListener('click', isClickedOutsideElement);
-});
-
-onBeforeUnmount(() => {
-  // Remove o ouvinte de evento de clique da janela
-  window.removeEventListener('click', isClickedOutsideElement);
-});
-
-watch(isVisible, (newValue) => {
-  if (!newValue) {
-    // Se a aside ficar invisível, remove o ouvinte de evento de clique da janela
-    window.removeEventListener('click', isClickedOutsideElement);
-  } else {
-    // Se a aside ficar visível, adiciona o ouvinte de evento de clique à janela
-    window.addEventListener('click', isClickedOutsideElement);
-  }
-});
-
-
 </script>
