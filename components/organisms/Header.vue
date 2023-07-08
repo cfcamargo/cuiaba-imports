@@ -19,12 +19,12 @@
       <nav class="w-full h-[40px] flex justify-center items-center xs:bg-zinc-900 md:bg-zinc-800">
           <ul class="xs:hidden md:flex items-center gap-10 font-light ">
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink>
+              <NuxtLink to="/">
                   Home
               </NuxtLink>
             </li>
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink>
+              <NuxtLink to="shop">
                 Loja
               </NuxtLink>
             </li>
@@ -54,10 +54,12 @@
 
 <script setup lang="ts">
 import { List } from 'lucide-vue-next';
+import {Events} from "@vue/runtime-dom";
 const asideShow = ref(false)
 
 function toogleShowAside(){
   asideShow.value = !asideShow.value
 }
+
 
 </script>
