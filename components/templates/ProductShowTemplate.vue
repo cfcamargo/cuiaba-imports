@@ -37,7 +37,7 @@
           {{ props.product.description}}
         </p>
       </div>
-      <div class="py-10" v-if="props.product?.videoID">
+      <div class="py-10" v-if="props.product?.videoURL">
           <div class="w-full aspect-video h-full" ref="youtubeContainer"></div>
       </div>
     </div>
@@ -49,12 +49,15 @@
 import {PropType} from "@vue/runtime-core";
 import productProps from "~/models/product";
 
+
 const props = defineProps({
   product : Object as PropType<productProps>
 })
 
 const youtubeContainer = ref(null)
 let player = null
+
+const videoID = getYouTubeVideoId(props.product?.videoURL)
 
 const variantSelected = ref<String>('')
 const invalidVariant = ref<Boolean>(false)
@@ -77,6 +80,21 @@ function handleReserveProduct(){
     }
 }
 
+function getYouTubeVideoId(url: string | undefined): String{
+  if(url){
+    const regex = /[?&]v=([^&#]*)/;
+    const match = url.match(regex);
+    if (match && match[1]) {
+      return match[1];
+    } else {
+      return '';
+    }
+  }
+  else {
+    return ''
+  }
+}
+
 
 function openReserveLink(){
     const message = `Olá! eu gostaria de reservar um ${props.product?.title} na versão de ${variantSelected.value}`
@@ -88,7 +106,7 @@ function openReserveLink(){
 onMounted(() => {
   const onYouTubeIframeAPIReady = () => {
     player = new window.YT.Player(youtubeContainer.value, {
-      videoId: props.product?.videoID,
+      videoId: videoID,
       playerVars: {
         autoplay: 0,
         controls: 1
@@ -105,6 +123,11 @@ onMounted(() => {
 
     window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady
   }
+})
+
+
+useHead({
+  title : `Cuiabá Imports | ${props.product?.title}`
 })
 
 </script>

@@ -4,5 +4,5 @@ export default interface productProps {
     cover : string,
     variants : string[],
     description : string,
-    videoID? : string
+    videoURL? : string
 }
