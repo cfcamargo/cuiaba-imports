@@ -38,7 +38,15 @@
         </p>
       </div>
       <div class="px-10 py-10" v-if="props.product?.videoURL">
-
+        <div>
+          <iframe
+              class="w-full aspect-video"
+              :src="props.product.videoURL"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
   </Container>
