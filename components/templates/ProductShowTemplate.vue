@@ -37,16 +37,8 @@
           {{ props.product.description}}
         </p>
       </div>
-      <div class="px-10 py-10" v-if="props.product?.videoURL">
-        <div>
-          <iframe
-              class="w-full aspect-video"
-              :src="props.product.videoURL"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-          ></iframe>
-        </div>
+      <div class="py-10" v-if="props.product?.videoID">
+          <div class="w-full aspect-video h-full" ref="youtubeContainer"></div>
       </div>
     </div>
   </Container>
@@ -54,17 +46,17 @@
 </template>
 
 <script setup lang="ts">
-
 import {PropType} from "@vue/runtime-core";
 import productProps from "~/models/product";
-
 
 const props = defineProps({
   product : Object as PropType<productProps>
 })
 
-const variantSelected = ref<String>('')
+const youtubeContainer = ref(null)
+let player = null
 
+const variantSelected = ref<String>('')
 const invalidVariant = ref<Boolean>(false)
 
 function changeVariant(variant : string){
@@ -92,5 +84,27 @@ function openReserveLink(){
 
     window.open(url, '_blank')
 }
+
+onMounted(() => {
+  const onYouTubeIframeAPIReady = () => {
+    player = new window.YT.Player(youtubeContainer.value, {
+      videoId: props.product?.videoID,
+      playerVars: {
+        autoplay: 0,
+        controls: 1
+      }
+    })
+  }
+
+  if (window.YT && window.YT.Player) {
+    onYouTubeIframeAPIReady()
+  } else {
+    const youtubeScript = document.createElement('script')
+    youtubeScript.src = 'https://www.youtube.com/iframe_api'
+    document.head.appendChild(youtubeScript)
+
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady
+  }
+})
 
 </script>
