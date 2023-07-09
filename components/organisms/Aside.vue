@@ -7,12 +7,12 @@
 
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light ">
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">
-              <NuxtLink>
+              <NuxtLink to="/">
                 Home
               </NuxtLink>
             </li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">
-              <NuxtLink>
+              <NuxtLink to="/shop">
                 Loja
               </NuxtLink>
             </li>
