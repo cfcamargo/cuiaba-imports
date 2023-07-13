@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full h-[120px] bg-black">
+    <header class="w-full h-[120px] bg-black fixed top-0 left-0 right-0 z-30">
       <Container>
         <div class="w-full h-[80px] flex items-center justify-between px-4">
             <NuxtLink to="/">
@@ -29,17 +29,17 @@
               </NuxtLink>
             </li>
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink>
+              <NuxtLink to="/assistence">
                 Assistência Técnica
               </NuxtLink>
             </li>
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink>
+              <NuxtLink to="/about">
                 Sobre
               </NuxtLink>
             </li>
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink>
+              <NuxtLink to="/contact">
                 Contato
               </NuxtLink>
             </li>

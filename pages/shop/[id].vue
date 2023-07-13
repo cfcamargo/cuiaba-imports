@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-  import productProps from "~/models/product";
+  import productProps from "~/models/Product";
 
   const route = useRoute()
   const productID = route.params.id

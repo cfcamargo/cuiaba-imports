@@ -18,17 +18,13 @@
           </div>
         </SwiperSlide>
       </Swiper>
-      <SocialLinks class="z-40"/>
+      <SocialLinks class="z-20"/>
     </div>
 </template>
 
 <script setup lang="ts">
-import {Navigation, Pagination} from "swiper";
+import { Navigation } from "swiper";
 
-interface slidesProps {
-  url : string,
-  bg? : string
-}
 
 const slides = ref([
     'https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-multiproduct-hero-full-suite.png',

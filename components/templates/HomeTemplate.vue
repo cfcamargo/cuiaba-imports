@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <main class="w-full">
+  <main class="w-full pt-[120px]">
     <HomeBanner />
     <section id="mas-vendidos">
       <HomeProductsSlider />
@@ -17,7 +17,5 @@
 
 <script setup lang="ts">
 
-
-const data = ref(false)
 
 </script>

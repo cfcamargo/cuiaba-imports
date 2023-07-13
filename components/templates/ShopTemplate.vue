@@ -1,7 +1,11 @@
 <template>
   <Header />
-  <main>
+  <main class="pt-[120px]">
     <ShopSlider />
+    <MostSearchItems />
+    <CategoryProductSearch />
+    <ProductList />
+    <Footer />
   </main>
 </template>
 
