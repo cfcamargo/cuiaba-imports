@@ -1,5 +1,7 @@
 <template>
-  <ShopTemplate />
+  <NuxtLayout>
+    <ShopTemplate />
+  </NuxtLayout>
 </template>
 <script setup lang="ts">
   useHead({

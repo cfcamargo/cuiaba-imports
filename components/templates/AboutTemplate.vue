@@ -1,6 +1,4 @@
 <template>
-  <Header />
-  <main class="pt-[120px]">
       <Container>
         <div class="flex flex-col gap-2 py-10">
           <h2 class="text-3xl font-bold text-zinc-900">Sobre a Cuiabá Imports</h2>
@@ -42,8 +40,6 @@
           </div>
         </div>
       </Container>
-  </main>
-  <Footer />
 </template>
 
 <script setup lang="ts">

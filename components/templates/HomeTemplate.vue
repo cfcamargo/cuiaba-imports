@@ -1,7 +1,7 @@
 <template>
-  <Header/>
-  <main class="w-full pt-[120px]">
-    <HomeBanner />
+    <section id="home_banner">
+      <HomeBanner />
+    </section>
     <section id="mas-vendidos">
       <HomeProductsSlider />
     </section>
@@ -11,8 +11,6 @@
     <section id="about">
       <AboutHome />
     </section>
-  </main>
-  <Footer />
 </template>
 
 <script setup lang="ts">

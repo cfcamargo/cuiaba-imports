@@ -1,5 +1,7 @@
 <template>
-  <AssistenceTemplate />
+  <NuxtLayout>
+    <AssistenceTemplate />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

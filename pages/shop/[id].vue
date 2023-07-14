@@ -1,5 +1,7 @@
 <template>
-  <ProductShowTemplate :product="product" />
+  <NuxtLayout>
+    <ProductShowTemplate :product="product" />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,4 @@
 <template>
-  <Header/>
   <Container>
     <div class="grid grid-cols-2 gap-10 py-10 pt-[120px]">
         <div class="flex justify-center">
