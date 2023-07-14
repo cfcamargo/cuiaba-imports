@@ -1,4 +1,5 @@
 export default interface productProps {
+    id? : number
     title : string,
     sub : string
     cover : string,
