@@ -5,39 +5,62 @@
         <h4 class="text-3xl font-bold text-zinc-950">Mais vendidos</h4>
       </div>
 
-      <Swiper
-          :modules="[SwiperAutoplay, Navigation ]"
-          :slides-per-view="3"
-          :loop="true"
-          :effect="'creative'"
-          :navigation="true"
-          :autoplay="{
+      <div v-if="store.$getLoadingStatus" class="grid grid-cols-3 justify-between w-full py-10">
+        <SkeltonLoading />
+        <SkeltonLoading />
+        <SkeltonLoading />
+      </div>
+
+      <div v-else>
+        <Swiper
+            :modules="[SwiperAutoplay, Navigation ]"
+            :slides-per-view="slidesPerView"
+            :loop="true"
+            :effect="'creative'"
+            :navigation="true"
+            :autoplay="{
             delay: 3000,
             disableOnInteraction: true,
           }"
-      >
-        <SwiperSlide v-for="(slide, index) in 8" :key="index">
-            <div class="w-full flex flex-col gap-2 py-4 items-center">
-              <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone-14-pro-max-colors.png" class="w-[300px]">
-
-              <div class="flex flex-col gap-4 items-center">
-                <div class="flex flex-col">
-                  <h4 class="font-bold">Celular Iphone 14 Pro Purple</h4>
-                  <span class="text-xs">Apple A16 Bionic | 6gb | 128gb</span>
+        >
+          <SwiperSlide v-for="(slide, index) in store.$getHomeMostSellProducts" :key="index">
+            <NuxtLink :to="`/shop/${slide.id}`">
+              <div class="w-full flex flex-col gap-2 py-4 items-center">
+                <div class="w-full [h-300px] flex justify-center">
+                  <img :src="slide.cover" class=" h-[300px] object-cover">
                 </div>
 
-                <WhatsappButton />
+                <div class="flex flex-col gap-4 items-center">
+                  <div class="flex flex-col items-center">
+                    <h4 class="font-bold">{{ slide.title}}</h4>
+                    <span class="text-xs">{{ slide.sub }}</span>
+                  </div>
+
+                  <WhatsappButton />
+                </div>
               </div>
-            </div>
-        </SwiperSlide>
-      </Swiper>
+            </NuxtLink>
+          </SwiperSlide>
+        </Swiper>
+      </div>
 
     </div>
   </Container>
+
 </template>
 
 <script setup lang="ts">
 import {Navigation} from "swiper";
+import { useProductStore } from '@/store/products'
 
+const store = useProductStore()
+
+const slidesPerView = ref(3)
+
+onMounted(() => {
+    if(window.innerWidth < 400){
+      slidesPerView.value = 1
+    }
+})
 
 </script>

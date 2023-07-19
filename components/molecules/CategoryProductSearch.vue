@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="flex flex-col w-full ga-6 py-16">
+    <div class="md:flex flex-col w-full ga-6 py-16 xs:hidden">
       <h4 class="text-xl font-bold">Busque por Categoria</h4>
       <div class="flex flex-wrap gap-10 py-6">
         <div class="flex flex-col gap-2 items-center justify-center rounded-full px-4 py-4 w-36 h-36 border overflow-hidden hover:border-blue-600 cursor-pointer">

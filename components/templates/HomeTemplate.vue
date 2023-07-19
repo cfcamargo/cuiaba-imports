@@ -14,6 +14,13 @@
 </template>
 
 <script setup lang="ts">
+import { useProductStore } from '@/store/products'
 
+const store = useProductStore()
+
+
+onMounted(() => {
+  store.fetchProdutcs()
+})
 
 </script>

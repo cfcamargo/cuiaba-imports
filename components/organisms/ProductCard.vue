@@ -1,7 +1,9 @@
 <template>
-  <NuxtLink :to="`/shop/${1}`" class="flex flex-col gap-2 px-4 py-2" :class="!props.slider ? 'shadow rounded border border-transparent hover:border-blue-600' : ''">
-    <img :src="props.product?.cover" class="max-w-[200px] mx-auto"/>
-    <div class="flex flex-col leading-relaxed items-center justify-center text-center">
+  <NuxtLink :to="`/shop/${props.product?.id}`" class="flex flex-col justify-center gap-2 px-4 py-2 h-[380px]" :class="!props.slider ? 'shadow rounded border border-transparent hover:border-blue-600' : ''">
+    <div class="h-[240px]">
+      <img :src="props.product?.cover" class="h-full mx-auto object-cover"/>
+    </div>
+    <div class="flex flex-col leading-relaxed items-center justify-center text-center h-[80px]">
       <h4>{{props.product.title}}</h4>
       <span class="text-xs">{{props.product.sub}}</span>
     </div>

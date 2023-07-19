@@ -1,6 +1,7 @@
 <template>
   <Container>
-    <div class="grid grid-cols-2 gap-10 py-10 pt-[120px]">
+    <div>
+      <div class="grid grid-cols-2 gap-10 py-10 pt-[120px]">
         <div class="flex justify-center">
           <img :src="props.product?.cover" class="h-[450px]">
         </div>
@@ -22,22 +23,23 @@
             </transition>
 
             <button class="flex gap-2 rounded-full px-4 py-2 bg-green-500 text-white items-center w-[250px] justify-center mt-10" @click="handleReserveProduct">
-                <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-white'"/>
-                <span>Reservar</span>
+              <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-white'"/>
+              <span>Reservar</span>
             </button>
 
           </div>
         </div>
-    </div>
-    <div class="flex flex-col px-10">
-      <div class="flex flex-col gap-8">
-        <h4 class="font-semibold text-lg">Descrição</h4>
-        <p>
-          {{ props.product.description }}
-        </p>
       </div>
-      <div class="py-10" v-if="props.product?.videoURL">
+      <div class="flex flex-col px-10">
+        <div class="flex flex-col gap-8">
+          <h4 class="font-semibold text-lg">Descrição</h4>
+          <p>
+            {{ props.product.description }}
+          </p>
+        </div>
+        <div class="py-10" v-if="props.product?.videoURL">
           <div class="w-full aspect-video h-full" ref="youtubeContainer"></div>
+        </div>
       </div>
     </div>
   </Container>
@@ -47,15 +49,18 @@
 <script setup lang="ts">
 import {PropType} from "@vue/runtime-core";
 import productProps from "~/models/Product";
+import { useProductStore } from '@/store/products'
 
 const props = defineProps({
-  product : Object as PropType<productProps>
+  product : Object as PropType<productProps>,
 })
+
+const store = useProductStore()
 
 const youtubeContainer = ref(null)
 let player = null
 
-const videoID = getYouTubeVideoId(props.product?.videoURL)
+const videoID = getYouTubeVideoId(props.product?.videoURL);
 
 const variantSelected = ref<String>('')
 const invalidVariant = ref<Boolean>(false)
@@ -101,7 +106,10 @@ function openReserveLink(){
     window.open(url, '_blank')
 }
 
+
+
 onMounted(() => {
+
   const onYouTubeIframeAPIReady = () => {
     player = new window.YT.Player(youtubeContainer.value, {
       videoId: videoID,

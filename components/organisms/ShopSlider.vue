@@ -14,7 +14,7 @@
       >
         <SwiperSlide v-for="(slide, index) in slides" :key="index">
           <div class="w-full h-[calc(100vh_-_120px)] flex flex-col items-center">
-              <img :src="slide" class="w-full object-cover object-bottom">
+              <img :src="slide" class="h-full w-full object-cover">
           </div>
         </SwiperSlide>
       </Swiper>
