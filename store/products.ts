@@ -7,7 +7,8 @@ export const useProductStore = defineStore('products', {
     state: () => ({
         products: [] as productProps[], //armazena a listagem em memoria, para nao ficar requisitando toda hora
         productsList : [] as productProps[][], // cria a lista de produtos dividindo os dados em arrays com 16 itens, para usar o index como paginacao
-        loading : false
+        loading : false,
+        pagina : 1,
     }),
     getters: {
         $getProducts(state){
@@ -20,6 +21,10 @@ export const useProductStore = defineStore('products', {
 
         $getProductById : (state) => {
             return (id: number) => state.products.filter((product) => product.id === id)
+        },
+
+        $getPaginate(state){
+            return state.pagina
         },
 
         $getShopMostSearchProducts(state): productProps[] {
@@ -44,6 +49,10 @@ export const useProductStore = defineStore('products', {
         },
     },
     actions: {
+
+        setPaginate(value: number){
+            this.pagina = value
+        },
 
         async fetchProdutcs(){
             const api_key = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY
@@ -98,6 +107,7 @@ export const useProductStore = defineStore('products', {
                 chunks.push(tempList.slice(i, i + 16));
             }
             this.productsList = chunks
+            console.log(this.productsList)
             this.loading = false
         }
     },
