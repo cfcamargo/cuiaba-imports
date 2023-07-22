@@ -38,23 +38,42 @@
           </div>
 
           <ul class="flex flex-col gap-8 items-end px-4 py-8 w-full">
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Celulares</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Notebooks</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Acessórios</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Cameras</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Apple</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Xiaomi</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">Samsung</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'celular')">Celulares</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Apple')">Apple</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Xiaomi')">Xiaomi</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Samsung')">Samsung</li>
           </ul>
 
       </aside>
     </transition>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { X } from 'lucide-vue-next'
+import { useProductStore } from '@/store/products'
 
+const router = useRouter()
+
+const store= useProductStore()
 const emits = defineEmits(['toogleShowAside'])
+
+async function fetchProductByFilter(key:string, value :string){
+    store.resetFilters()
+    store.setFilter(key, value)
+    emits('toogleShowAside')
+    await router.push({name: 'shop'})
+    await store.fetchProdutcs()
+
+    await nextTick()
+
+    const element = document.getElementById('products')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+}
 
  const props = defineProps({
    show : Boolean

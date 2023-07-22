@@ -1,10 +1,13 @@
 <template>
   <Container>
-    <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0">
-      <h4 class="text-xl font-bold">Produtos</h4>
-      <div>
-        <ul class="grid xs:grid-cols-1 md:grid-cols-4 gap-16">
-          <li v-for="(product, index) in props.products">
+    <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0" id="products">
+      <div class="flex items-center justify-between">
+        <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
+        <el-button @click="cleanFilters" v-if="store.$getIsFiltered">Limpar Filtros</el-button>
+      </div>
+      <div v-if="props.products?.length > 0">
+        <ul class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-16">
+          <li v-for="product in props.products" :key="product.id">
             <ProductCard :product="product"/>
           </li>
         </ul>
@@ -13,11 +16,15 @@
               background
               layout="prev, pager, next"
               @currentChange="changePaginate($event)"
-              :total="store.$getProductsList.length"
+              :total="store.$getProductsLength"
+              :page-size="16"
               :current-page="store.$getPaginate"
               class="mx-auto"
           />
         </div>
+      </div>
+      <div v-else class="mx-auto py-20">
+        <Empty />
       </div>
     </div>
 
@@ -31,11 +38,15 @@
 
   const store = useProductStore()
 
-  function changePaginate(value : number){
+  async function changePaginate(value : number){
     store.setPaginate(value)
-    store.fetchProdutcs()
+    await store.fetchProdutcs(value)
   }
 
+  async function cleanFilters(){
+      store.resetFilters()
+      await store.fetchProdutcs()
+  }
 
   const props = defineProps({
     products : Array<Array<productProps>>

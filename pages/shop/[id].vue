@@ -7,7 +7,6 @@
         </div>
       </Container>
     </div>
-
     <ProductShowTemplate :product="product" v-else/>
   </NuxtLayout>
 </template>
@@ -24,16 +23,18 @@
   const loading = ref(true)
   const product = ref<productProps | {}>({})
 
+  async function fetchProductById(){
+      loading.value = true
+      await axios.get(`http://127.0.0.1:3333/products/${productID}`)
+          .then(( { data }) => {
+            product.value = data
+          })
+      loading.value = false
+  }
+
 
  onMounted(async () => {
-    if(store.$getProducts.length > 0){
-      product.value = store.$getProductById(Number(productID))[0]
-      loading.value = false
-    } else {
-      await store.fetchProdutcs();
-      product.value = store.$getProductById(Number(productID))[0]
-      loading.value = false
-    }
+      await fetchProductById()
   })
 
 </script>

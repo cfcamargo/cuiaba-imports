@@ -11,7 +11,7 @@
       </div>
       <Swiper
           :modules="[SwiperAutoplay, Navigation ]"
-          :slides-per-view="4"
+          :slides-per-view="slidesPerView"
           :loop="true"
           :effect="'creative'"
           :navigation="true"
@@ -21,7 +21,7 @@
           }"
           v-else
       >
-        <SwiperSlide v-for="(product, index) in store.$getShopMostSearchProducts" :key="index">
+        <SwiperSlide v-for="(product, index) in mostProducts" :key="index">
           <ProductCard :slider="true" :product="product"/>
         </SwiperSlide>
       </Swiper>
@@ -32,25 +32,35 @@
 
 <script setup lang="ts">
 import {Navigation} from "swiper";
-import { useProductStore } from '@/store/products'
+import {SymbolKind} from "vscode-languageserver-types";
+import Array = SymbolKind.Array;
+import productProps from "~/models/Product";
+import axios from "axios";
 
-const store = useProductStore()
 const slidesPerView = ref(4)
 const loading = ref(true)
+
+const mostProducts = ref<Array<productProps>>([])
+
+
+async function fetchMostProducts() {
+  const api_url :string = `http://127.0.0.1:3333/mostproducts?most=search`
+  await axios.get(api_url)
+      .then(({ data }) => {
+        mostProducts.value = data
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  loading.value = false
+}
 
 
 onMounted(async () => {
   if(window.innerWidth < 400){
     slidesPerView.value = 1
   }
-
-  if(store.productsList.length > 0){
-    loading.value = false
-  } else {
-    await store.fetchProdutcs()
-    loading.value = false
-  }
-
+  await fetchMostProducts()
 })
 
 </script>

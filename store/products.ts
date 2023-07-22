@@ -5,110 +5,84 @@ import axios from 'axios'
 
 export const useProductStore = defineStore('products', {
     state: () => ({
-        products: [] as productProps[], //armazena a listagem em memoria, para nao ficar requisitando toda hora
-        productsList : [] as productProps[][], // cria a lista de produtos dividindo os dados em arrays com 16 itens, para usar o index como paginacao
+        products: [] as productProps[],
+        productsLength : 0,
         loading : false,
         pagina : 1,
+        filters : {
+            title : '',
+            brand : '',
+            category: ''
+        }
     }),
     getters: {
-        $getProducts(state){
-            return state.productsList
-        },
-
-        $getProductsList(state): productProps[][]{
-          return state.productsList
-        },
-
-        $getProductById : (state) => {
-            return (id: number) => state.products.filter((product) => product.id === id)
+        $getProducts(state): productProps[]{
+            return state.products
         },
 
         $getPaginate(state){
             return state.pagina
         },
 
-        $getShopMostSearchProducts(state): productProps[] {
-
-            return state.products.filter((product: productProps) => product.mostSearchShop)
-        },
-
-        $getHomeMostSellProducts(state): productProps[] {
-            let mostSellproducts: productProps[] = []
-
-            state.products.map((product) => {
-                if(mostSellproducts.length < 10 && product.mostSellHome === true){
-                    mostSellproducts.push(product)
-                }
-            })
-
-            return mostSellproducts
+        $getProductsLength(state){
+            return state.productsLength
         },
 
         $getLoadingStatus(state): boolean {
             return state.loading
         },
+
+        $getIsFiltered(state){
+            if(state.filters.title !== '' || state.filters.brand !== '' || state.filters.category !== ''){
+                return true
+            }
+        }
     },
     actions: {
-
-        setPaginate(value: number){
-            this.pagina = value
-        },
-
-        async fetchProdutcs(){
-            const api_key = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY
-            const apiId = import.meta.env.VITE_GOOGLE_SHEETS_SPREADSHEET_ID
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/${apiId}/values/bd?key=${api_key}`
+        async fetchProdutcs(page? : number){
+            const filter = this.setFilterType()
+            const api_url :string = `http://127.0.0.1:3333/products?${filter}${page ? 'page='+page : ''}`
 
             try {
                 this.loading = true
-                const response = await axios.get(url);
-                let data = response.data.values;
-                const transformedProducts: Array<productProps> = []
+                const { data } = await axios.get(api_url);
+                this.products = data.products
+                this.productsLength = data.links
+                this.loading = false
 
-                data.map((product: any) => {
-                    if(product[0] !== 'id'){
-                        let transformedProduct = {
-                            id : Number(product[0]),
-                            title : product[1],
-                            sub: product[2],
-                            description : product[3],
-                            brand: product[4],
-                            category : product[5],
-                            cover : product[6],
-                            videoURL : product[7],
-                            mostSellHome : product[8] === 'sim',
-                            mostSearchShop : product[9] === 'sim',
-                            variants : product[10].split(',')
-                        } as productProps
-
-                        transformedProducts.push(transformedProduct)
-
-                    }
-                    this.products = transformedProducts
-                    this.createListProduct()
-
-                })
             } catch (error) {
                 console.error('An error occurred:', error);
             }
         },
 
-        createListProduct(filter? : string){
-            let tempList = []
 
-            if(filter){
-                tempList = this.products.filter((product : productProps) => product.title.includes(filter))
+        setPaginate(value: number){
+            this.pagina = value
+        },
+
+
+        setFilter(key: string, value : string){
+            // @ts-ignore
+            this.filters[key] = value
+        },
+
+        resetFilters(){
+            this.filters.title = ''
+            this.filters.brand = ''
+            this.filters.category = ''
+            this.pagina = 1
+        },
+
+        setFilterType(){
+            if(this.filters.title !== ''){
+                return `title=${this.filters.title}&`
+            } else if(this.filters.brand !== ''){
+                return `brand=${this.filters.brand}&`
+            } else if(this.filters.category !== ''){
+                return `category=${this.filters.category}&`
             } else {
-                tempList = this.products
+                return ''
             }
-
-            let chunks : any = [];
-            for (let i = 0; i < tempList.length; i += 16) {
-                chunks.push(tempList.slice(i, i + 16));
-            }
-            this.productsList = chunks
-            console.log(this.productsList)
-            this.loading = false
         }
     },
 })

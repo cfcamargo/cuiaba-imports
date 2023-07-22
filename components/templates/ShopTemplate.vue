@@ -1,31 +1,22 @@
 <template>
     <ShopSlider />
-    <MostSearchItems />
+    <MostSearchItems/>
     <CategoryProductSearch />
-    <div v-if="store.$getLoadingStatus" class="mx-auto py-10 grid grid-cols-4">
-        <div v-for="item in 16" :key="item">
+    <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid grid-cols-4 gap-16 justify-center items-center">
+        <div v-for="item in 16" :key="item" class="mx-auto h-[400px]">
           <SkeltonLoading />
         </div>
     </div>
-    <ProductList :products="products[store.$getPaginate - 1]" v-else/>
+    <ProductList :products="store.$getProducts" v-else/>
 </template>
 
 <script setup lang="ts">
 import {useProductStore} from '@/store/products'
-import productProps from "~/models/Product";
+
 const store = useProductStore()
 
-const loading = ref(true)
-
-const products = ref<Array<Array<productProps>>>([])
-
 onMounted(async () => {
-  if(store.$getProductsList.length > 0){
-    products.value = store.$getProductsList
-  } else {
     await store.fetchProdutcs();
-    products.value = store.$getProductsList
-  }
 })
 
 </script>

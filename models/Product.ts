@@ -1,5 +1,6 @@
 export default interface productProps {
     id? : number
+    qtd : number,
     title : string,
     sub : string
     description : string,

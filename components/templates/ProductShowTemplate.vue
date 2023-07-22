@@ -37,7 +37,7 @@
             {{ props.product.description }}
           </p>
         </div>
-        <div class="py-10" v-if="props.product?.videoURL">
+        <div class="pt-10 pb-20" v-if="props.product?.videoURL">
           <div class="w-full aspect-video h-full" ref="youtubeContainer"></div>
         </div>
       </div>
