@@ -18,6 +18,9 @@ import { useProductStore } from '@/store/products'
 
 const store = useProductStore()
 
+useHead({
+  title : 'Cuiabá Imports | Home'
+})
 
 onMounted(() => {
   store.fetchProdutcs()

@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="py-20 grid grid-cols-2 gap-6 items-center">
+    <div class="py-20 grid xs:grid-cols-1 md:grid-cols-2 gap-6 items-center xs:px-4 md:px-2">
       <div class="flex flex-col gap-8">
         <h4 class="text-4xl font-bold text-zinc-900">Sobre Nós</h4>
 

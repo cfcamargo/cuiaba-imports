@@ -55,4 +55,8 @@
 <script setup lang="ts">
 import { Instagram, Pin, Facebook, ArrowLeftCircle } from 'lucide-vue-next'
 
+useHead({
+  title : 'Cuiabá Imports | Contato'
+})
+
 </script>

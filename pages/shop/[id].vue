@@ -20,6 +20,8 @@
   const route = useRoute()
   const productID = route.params.id
 
+  const title = ref('')
+
   const loading = ref(true)
   const product = ref<productProps | {}>({})
 
@@ -28,10 +30,14 @@
       await axios.get(`http://127.0.0.1:3333/products/${productID}`)
           .then(( { data }) => {
             product.value = data
+            title.value = data.title
           })
       loading.value = false
   }
 
+  useHead({
+    title : `Cuiabá Imports ${title.value ? '| ' + title.value : '| Loja'}`
+  })
 
  onMounted(async () => {
       await fetchProductById()

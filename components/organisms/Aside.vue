@@ -33,8 +33,8 @@
             </li>
           </ul>
 
-          <div class="mt-6 w-full xs:flex justify-end px-4 border-t-2 border-gray-700 md:hidden">
-            <h2 class="text-zinc-300 mt-4 text-2xl">Categorias</h2>
+          <div class="mt-6 w-full xs:flex justify-end px-4 border-t border-gray-700 md:hidden">
+            <h2 class="text-zinc-300 mt-4 text-bold text-xl">Busque por Categorias</h2>
           </div>
 
           <ul class="flex flex-col gap-8 items-end px-4 py-8 w-full">

@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center">
     <div ref="animationContainer"></div>
+    <p class="text-xs text-gray-200 text-center mt-4">Nenhum produto encontrado</p>
   </div>
 </template>
 

@@ -40,8 +40,8 @@ export const useProductStore = defineStore('products', {
     },
     actions: {
         async fetchProdutcs(page? : number){
-            const filter = this.setFilterType()
-            const api_url :string = `http://127.0.0.1:3333/products?${filter}${page ? 'page='+page : ''}`
+            const filter:string = this.setFilterType()
+            const api_url:string = `http://127.0.0.1:3333/products?${filter}${page ? 'page='+page : ''}`
 
             try {
                 this.loading = true
@@ -54,7 +54,6 @@ export const useProductStore = defineStore('products', {
                 console.error('An error occurred:', error);
             }
         },
-
 
         setPaginate(value: number){
             this.pagina = value

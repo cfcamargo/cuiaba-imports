@@ -1,8 +1,7 @@
 <template>
   <Container>
     <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0" id="products">
-      <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
+      <div class="flex items-center justify-between"><h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
         <el-button @click="cleanFilters" v-if="store.$getIsFiltered">Limpar Filtros</el-button>
       </div>
       <div v-if="props.products?.length > 0">
@@ -11,6 +10,7 @@
             <ProductCard :product="product"/>
           </li>
         </ul>
+
         <div class="mx-auto py-6 flex justify-center items-center w-full">
           <el-pagination
               background
@@ -27,8 +27,6 @@
         <Empty />
       </div>
     </div>
-
-
   </Container>
 </template>
 

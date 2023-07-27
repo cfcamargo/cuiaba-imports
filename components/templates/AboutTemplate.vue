@@ -1,8 +1,8 @@
 <template>
       <Container>
-        <div class="flex flex-col gap-2 py-10">
+        <div class="flex flex-col gap-2 py-10 xs:px-4 md:px-2">
           <h2 class="text-3xl font-bold text-zinc-900">Sobre a Cuiabá Imports</h2>
-          <div class="grid grid-cols-2 gap-20 mt-16">
+          <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-20 mt-16">
             <div class="flex flex-col gap-4">
               <p>
                 Bem-vindo à nossa incrível loja de produtos importados no Paraguai, onde o mundo da tecnologia encontra a excelência em qualidade! Somos especializados em trazer até você os mais recentes e desejados produtos Apple e Samsung. Aqui, cada visita é uma experiência única, repleta de inovação e estilo.
@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-20 mt-20 items-center">
+          <div class="xs:flex xs:flex-col-reverse md:grid  md:grid-cols-2 gap-20 mt-20 items-center">
             <div>
               <img src="https://th.bing.com/th/id/OIP.h0QYeEVj8Acfn-oXyPnyPwHaE7?pid=ImgDet&rs=1" class="object-cover h-full"/>
             </div>
