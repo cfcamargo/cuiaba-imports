@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container v-if="mostProducts.length > 0">
     <div class="w-full py-4 pb-4">
       <div class="w-full py-10 flex justify-center">
         <h4 class="text-3xl font-bold text-zinc-950">Mais vendidos</h4>

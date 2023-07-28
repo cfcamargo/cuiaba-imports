@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="flex flex-col px-10">
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-8 pb-10">
           <h4 class="font-semibold text-lg">Descrição</h4>
           <p>
             {{ props.product.description }}
