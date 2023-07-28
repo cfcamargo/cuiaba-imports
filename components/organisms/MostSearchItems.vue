@@ -44,7 +44,7 @@ const mostProducts = ref<Array<productProps>>([])
 
 
 async function fetchMostProducts() {
-  const api_url :string = `http://127.0.0.1:3333/mostproducts?most=search`
+  const api_url :string = `${import.meta.env.VITE_API_URL}/mostproducts?most=search`
   await axios.get(api_url)
       .then(({ data }) => {
         mostProducts.value = data

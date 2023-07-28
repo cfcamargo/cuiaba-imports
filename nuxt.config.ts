@@ -18,5 +18,8 @@ export default defineNuxtConfig({
         { name : 'description', content : 'Descubra os melhores eletrônicos na nossa loja. Smartphones, TVs e mais. Produtos autênticos das melhores marcas. Entrega rápida. Atendimento ao cliente de qualidade. Visite-nos agora!'},
       ]
     }
-  }
+  },
+  env: {
+    API_URL: process.env.API_URL
+  },
 })

@@ -41,7 +41,7 @@ export const useProductStore = defineStore('products', {
     actions: {
         async fetchProdutcs(page? : number){
             const filter:string = this.setFilterType()
-            const api_url:string = `http://127.0.0.1:3333/products?${filter}${page ? 'page='+page : ''}`
+            const api_url:string = `${import.meta.env.VITE_API_URL}/products?${filter}${page ? 'page='+page : ''}`
 
             try {
                 this.loading = true
