@@ -4,9 +4,9 @@
       <div class="flex xs:flex-col md:flex-row gap-4 justify-between">
           <div class="flex flex-col xs:items-center md:items-start gap-10">
             <div>
-              <a href="" class="flex gap-2 items-center">
+              <a href="http://bit.ly/3IMA32v" target="_blank" class="flex gap-2 items-center">
                 <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-zinc-200'" />
-                <span class="text-zinc-200">679999-0000</span>
+                <span class="text-zinc-200">67 9 8451-3860</span>
               </a>
             </div>
 

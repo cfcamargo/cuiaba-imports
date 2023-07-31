@@ -1,13 +1,13 @@
 <template>
   <div :class="flexDirection">
-    <a class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800">
+    <a href="https://www.instagram.com/cuiabaimportspy/" target="_blank" class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800">
       <Instagram color="white" :size="20" />
     </a>
 
-    <a class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800">
+    <a class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800" href="https://www.facebook.com/cuiabaimportspy" target="_blank">
       <Facebook color="white" :size="20"/>
     </a>
-    <a class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800">
+    <a class="rounded-full px-2 py-2 bg-zinc-700 cursor-pointer hover:bg-zinc-800" href="http://bit.ly/3IMA32v" target="_blank">
       <WhatsappIcon :color="'text-white'" :icon_width="20" :icon_height="20"/>
     </a>
   </div>

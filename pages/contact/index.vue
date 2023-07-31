@@ -11,28 +11,28 @@
                   <h2 class="text-center">Cuiabá Imports</h2>
                   <ul class="mt-6 w-full space-y-2">
                     <li>
-                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded">
+                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded" href="http://bit.ly/3IMA32v" target="_blank">
                         <WhatsappIcon :icon_width="20"/>
                         <span>Whatsapp</span>
                       </a>
                     </li>
 
                     <li>
-                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded">
+                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded" target="_blank" href="https://www.instagram.com/cuiabaimportspy/">
                         <Instagram color="white" :size="22" />
                         <span>Instagram</span>
                       </a>
                     </li>
 
                     <li>
-                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded">
+                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded" href="https://www.facebook.com/cuiabaimportspy" target="_blank">
                         <Facebook color="white" :size="22" />
                         <span>Facebook</span>
                       </a>
                     </li>
 
                     <li>
-                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded">
+                      <a class="px-2 py-2 bg-gray-900 hover:bg-gray-800 w-full flex gap-4 justify-center items-center rounded" href="https://goo.gl/maps/iGCUGsx5cNLuY2eh8" target="_blank">
                         <Pin color="white" :size="22" />
                         <span>Localização</span>
                       </a>
