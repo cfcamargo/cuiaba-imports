@@ -27,7 +27,7 @@
 
   async function fetchProductById(){
       loading.value = true
-      await axios.get(`http://127.0.0.1:3333/products/${productID}`)
+      await axios.get(`${import.meta.env.VITE_API_URL}/products/${productID}`)
           .then(( { data }) => {
             product.value = data
             title.value = data.title
