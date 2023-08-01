@@ -5,7 +5,7 @@
         <h4 class="text-xl font-bold text-zinc-950">Itens Mais Buscados</h4>
       </div>
       <div v-if="loading" class="grid grid-cols-4">
-        <div v-for="item in 4" :key="item">
+        <div v-for="item in slidesPerView" :key="item">
           <SkeltonLoading />
         </div>
       </div>

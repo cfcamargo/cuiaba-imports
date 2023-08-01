@@ -2,7 +2,7 @@
     <ShopSlider />
     <MostSearchItems/>
     <CategoryProductSearch />
-    <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid grid-cols-4 gap-16 justify-center items-center">
+    <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid xs:grid-cols-1 md:grid-cols-4 gap-16 justify-center items-center">
         <div v-for="item in 16" :key="item" class="mx-auto h-[400px]">
           <SkeltonLoading />
         </div>

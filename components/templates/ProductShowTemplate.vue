@@ -1,11 +1,11 @@
 <template>
   <Container>
     <div>
-      <div class="grid grid-cols-2 gap-10 py-10 pt-[120px]">
+      <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-10 py-10 pt-[120px]">
         <div class="flex justify-center">
           <img :src="props.product?.cover" class="h-[450px]">
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col xs:px-10 md:px-0">
           <div class="flex flex-col py-10">
             <h3 class="font-bold text-2xl w-full max-w-[400px]">{{props.product.title}}</h3>
             <span v-if="props.product?.sub">{{props.product.sub}}</span>
