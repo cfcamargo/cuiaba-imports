@@ -3,7 +3,10 @@
     <div>
       <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-10 py-10 pt-[120px]">
         <div class="flex justify-center">
-          <img :src="props.product?.cover" class="h-[450px]">
+          <div v-if="props.product?.cover === ''" class="mx-auto h-[450px] max-w-[300px]">
+            <ImageNotFound />
+          </div>
+          <img :src="props.product?.cover" class="h-[450px]" v-else>
         </div>
         <div class="flex flex-col xs:px-10 md:px-0">
           <div class="flex flex-col py-10">

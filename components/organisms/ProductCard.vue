@@ -1,7 +1,10 @@
 <template>
-  <NuxtLink :to="`/shop/${props.product?.id}`" class="flex flex-col justify-center gap-2 px-4 py-2 h-[400px]" :class="!props.slider ? 'shadow rounded border border-transparent hover:border-blue-600' : ''">
+  <NuxtLink :to="`/shop/${props.product?.id}`" class="flex flex-col justify-center gap-2 px-4 py-2 h-[400px] overflow-hidden" :class="!props.slider ? 'shadow rounded border border-transparent hover:border-blue-600' : ''">
     <div class="h-[240px] w-[240px] mx-auto flex justify-center items-center">
-      <img :src="props.product?.cover" class="w-full max-h-full mx-auto object-cover"/>
+      <div v-if="props.product?.cover === ''" class="w-[60%] mx-auto">
+        <ImageNotFound />
+      </div>
+      <img :src="props.product?.cover" class="w-full max-h-full mx-auto object-cover" v-else/>
     </div>
     <div class="flex flex-col leading-relaxed items-center justify-center text-center h-[80px]">
       <h4>{{props.product.title}}</h4>
