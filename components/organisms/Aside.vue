@@ -5,6 +5,16 @@
             <X color="white" :size="25"/>
           </button>
 
+          <ul class="flex flex-col gap-8 items-end px-4 py-8 w-full">
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'celular')">Celulares</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Apple')">Apple</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Xiaomi')">Xiaomi</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Samsung')">Samsung</li>
+          </ul>
+
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light ">
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600">
               <NuxtLink to="/">
@@ -33,19 +43,7 @@
             </li>
           </ul>
 
-          <div class="mt-6 w-full xs:flex justify-end px-4 border-t border-gray-700 md:hidden">
-            <h2 class="text-zinc-300 mt-4 text-bold text-xl">Busque por Categorias</h2>
-          </div>
 
-          <ul class="flex flex-col gap-8 items-end px-4 py-8 w-full">
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'celular')">Celulares</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Apple')">Apple</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Xiaomi')">Xiaomi</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Samsung')">Samsung</li>
-          </ul>
 
       </aside>
     </transition>

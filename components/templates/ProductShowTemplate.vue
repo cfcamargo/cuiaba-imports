@@ -75,7 +75,7 @@ function changeVariant(variant : string){
 }
 
 function handleReserveProduct(){
-    if(variantSelected.value !== ''){
+    if(variantSelected.value !== '' && props.product?.variants){
       invalidVariant.value = false
       openReserveLink()
     } else {
@@ -109,25 +109,26 @@ function openReserveLink(){
 
 
 onMounted(() => {
+  if(props.product?.videoURL){
+    const onYouTubeIframeAPIReady = () => {
+      player = new window.YT.Player(youtubeContainer.value, {
+        videoId: videoID,
+        playerVars: {
+          autoplay: 0,
+          controls: 1
+        }
+      })
+    }
 
-  const onYouTubeIframeAPIReady = () => {
-    player = new window.YT.Player(youtubeContainer.value, {
-      videoId: videoID,
-      playerVars: {
-        autoplay: 0,
-        controls: 1
-      }
-    })
-  }
+    if (window.YT && window.YT.Player) {
+      onYouTubeIframeAPIReady()
+    } else {
+      const youtubeScript = document.createElement('script')
+      youtubeScript.src = 'https://www.youtube.com/iframe_api'
+      document.head.appendChild(youtubeScript)
 
-  if (window.YT && window.YT.Player) {
-    onYouTubeIframeAPIReady()
-  } else {
-    const youtubeScript = document.createElement('script')
-    youtubeScript.src = 'https://www.youtube.com/iframe_api'
-    document.head.appendChild(youtubeScript)
-
-    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady
+    }
   }
 })
 
