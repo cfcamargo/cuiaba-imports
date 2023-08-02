@@ -13,7 +13,7 @@
 
           <div>
             <span>Selecione a versão</span>
-            <div class="flex gap-4 py-4">
+            <div class="flex gap-4 py-4" v-if="props.product?.variants[0] !== ''">
               <button type="button" @click="changeVariant(variant)" class="rounded-full px-4 py-1 border border-gray-900 font-semibold cursor-pointer" v-for="variant in props.product?.variants"  :class="[variant === variantSelected ? 'bg-gray-800 text-gray-200' : '' , variantSelected === '' && invalidVariant ? 'border-red-500' : '']">
                 {{variant}}
               </button>
@@ -75,12 +75,16 @@ function changeVariant(variant : string){
 }
 
 function handleReserveProduct(){
-    if(variantSelected.value !== '' && props.product?.variants){
+  if(props.product?.variants[0] !== '') {
+    if (variantSelected.value !== '') {
       invalidVariant.value = false
       openReserveLink()
     } else {
       invalidVariant.value = true
     }
+  } else{
+    openReserveLink()
+  }
 }
 
 function getYouTubeVideoId(url: string | undefined): String{
