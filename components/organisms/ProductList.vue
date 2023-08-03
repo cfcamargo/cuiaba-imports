@@ -39,6 +39,13 @@
   async function changePaginate(value : number){
     store.setPaginate(value)
     await store.fetchProdutcs(value)
+
+    await nextTick()
+
+    const element = document.getElementById('products')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   async function cleanFilters(){

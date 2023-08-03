@@ -24,7 +24,7 @@
               </NuxtLink>
             </li>
             <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
-              <NuxtLink to="/shop">
+              <NuxtLink to="/shop" @click="resetFilters">
                 Loja
               </NuxtLink>
             </li>
@@ -54,11 +54,22 @@
 
 <script setup lang="ts">
 import { List } from 'lucide-vue-next';
-import {Events} from "@vue/runtime-dom";
+import { useProductStore } from  '@/store/products'
 const asideShow = ref(false)
+
+
+const store = useProductStore()
 
 function toogleShowAside(){
   asideShow.value = !asideShow.value
+}
+
+async function resetFilters(){
+    if(store.$getIsFiltered){
+      store.resetFilters()
+      await store.fetchProdutcs()
+    }
+
 }
 
 
