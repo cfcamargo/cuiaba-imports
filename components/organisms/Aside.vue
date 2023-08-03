@@ -1,6 +1,6 @@
 <template>
     <transition enter-active-class="animate__animated animate__fadeInRight" leave-active-class="animate__animated animate__fadeOutRight">
-      <aside v-show="props.show" class="h-full w-2/3 md:w-1/5 bg-zinc-800 fixed top-0 right-0 bottom-0 z-30 max-h-screen overflow-auto z-50">
+      <aside v-show="props.show" class="h-full w-2/3 md:w-1/5 bg-zinc-800 fixed top-0 right-0 bottom-0  max-h-screen overflow-auto z-50">
           <button @click="$emit('toogleShowAside')" class="w-full flex justify-end px-4 py-4 sticky">
             <X color="white" :size="25"/>
           </button>
@@ -10,9 +10,6 @@
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Apple')">Apple</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Xiaomi')">Xiaomi</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('brand', 'Samsung')">Samsung</li>
           </ul>
 
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light ">

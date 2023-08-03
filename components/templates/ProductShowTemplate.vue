@@ -15,7 +15,7 @@
           </div>
 
           <div>
-            <span>Selecione a versão</span>
+            <span v-if="props.product?.variants[0] !== ''">Selecione a versão</span>
             <div class="flex gap-4 py-4" v-if="props.product?.variants[0] !== ''">
               <button type="button" @click="changeVariant(variant)" class="rounded-full px-4 py-1 border border-gray-900 font-semibold cursor-pointer" v-for="variant in props.product?.variants"  :class="[variant === variantSelected ? 'bg-gray-800 text-gray-200' : '' , variantSelected === '' && invalidVariant ? 'border-red-500' : '']">
                 {{variant}}
@@ -27,7 +27,7 @@
 
             <button class="flex gap-2 rounded-full px-4 py-2 bg-green-500 text-white items-center w-[250px] justify-center mt-10" @click="handleReserveProduct">
               <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-white'"/>
-              <span>Reservar</span>
+              <span>Falar com vendedor</span>
             </button>
 
           </div>
@@ -107,7 +107,7 @@ function getYouTubeVideoId(url: string | undefined): String{
 
 
 function openReserveLink(){
-    const message = `Olá! eu gostaria de reservar um ${props.product?.title} na versão de ${variantSelected.value}`
+    const message = `Olá! eu gostaria do Orçamento de um ${props.product?.title} na versão de ${variantSelected.value}`
     const url = `https://api.whatsapp.com/send?phone=5567984513860&text=${message}`
 
     window.open(url, '_blank')
