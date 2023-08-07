@@ -10,6 +10,8 @@
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Carregador')">Carregadores</li>
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Fone de ouvido')">Fones De Ouvido</li>
           </ul>
 
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light ">

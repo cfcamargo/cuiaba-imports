@@ -16,8 +16,11 @@ import { useProductStore } from '@/store/products'
 const searchTerm = ref<String>('')
 
 const router = useRouter()
+const route = useRoute()
 const store= useProductStore()
-async function submit(key:string,){
+
+
+async function submit(){
   if(searchTerm.value){
     store.resetFilters()
     store.setFilter('title', searchTerm.value)
@@ -30,9 +33,17 @@ async function submit(key:string,){
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
-  }
 
+    router.push({ path: '/shop', query: { title: searchTerm.value } });
+  }
 }
+
+onMounted(() => {
+  if (route.query.title) {
+    searchTerm.value = route.query.title;
+    submit()
+  }
+})
 
 
 </script>
