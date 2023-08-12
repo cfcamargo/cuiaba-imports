@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="flex justify-end">
-        <img src="/about-cover.png" class="2-[90%]">
+        <img src="/about-cover.png" class="w-[90%]">
       </div>
     </div>
   </Container>

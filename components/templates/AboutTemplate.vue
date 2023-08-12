@@ -21,13 +21,13 @@
               </p>
             </div>
             <div>
-              <img src="https://th.bing.com/th/id/OIP.h0QYeEVj8Acfn-oXyPnyPwHaE7?pid=ImgDet&rs=1" class="object-cover h-full"/>
+              <img src="/about1.png" class="object-cover h-full"/>
             </div>
           </div>
 
           <div class="xs:flex xs:flex-col-reverse md:grid  md:grid-cols-2 gap-20 mt-20 items-center">
             <div>
-              <img src="https://th.bing.com/th/id/OIP.h0QYeEVj8Acfn-oXyPnyPwHaE7?pid=ImgDet&rs=1" class="object-cover h-full"/>
+              <img src="/about2.png" class="object-cover h-full"/>
             </div>
             <div class="flex flex-col gap-4">
               <h4 class="text-zinc-900 text-2xl font-bold text-right">Missão</h4>

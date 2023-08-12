@@ -80,8 +80,6 @@ onMounted(async() => {
     if(window.innerWidth < 430){
       slidesPerView.value = 1
     }
-
     await fetchMostProducts()
 })
-
 </script>

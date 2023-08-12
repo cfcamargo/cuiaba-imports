@@ -10,7 +10,3 @@
     text : String,
   })
 </script>
-
-<style scoped>
-
-</style>
