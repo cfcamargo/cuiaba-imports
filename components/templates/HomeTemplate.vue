@@ -22,8 +22,8 @@ useHead({
   title : 'Cuiabá Imports | Home'
 })
 
-onMounted(() => {
-  store.fetchProdutcs()
+onMounted(async () => {
+  await store.fetchProdutcs()
 })
 
 </script>

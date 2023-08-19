@@ -1,5 +1,5 @@
 <template>
-  <Container v-if="mostProducts.length > 0">
+  <Container v-if="loading || mostProducts.length > 0">
     <div class="w-full py-4 pb-4">
       <div class="w-full py-10 flex justify-center">
         <h4 class="text-3xl font-bold text-zinc-950">Mais vendidos</h4>
@@ -55,7 +55,7 @@ import axios from "axios";
 import productProps from "~/models/Product";
 
 
-const loading = ref(false)
+const loading = ref(true)
 
 const slidesPerView = ref(3)
 

@@ -55,10 +55,10 @@
 <script setup lang="ts">
 import { List } from 'lucide-vue-next';
 import { useProductStore } from  '@/store/products'
-const asideShow = ref(false)
-
 
 const store = useProductStore()
+
+const asideShow = ref(false)
 
 function toogleShowAside(){
   asideShow.value = !asideShow.value
@@ -71,6 +71,4 @@ async function resetFilters(){
     }
 
 }
-
-
 </script>
