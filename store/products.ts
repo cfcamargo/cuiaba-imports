@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
 import productProps from "~/models/Product";
+import Brand from "~/models/Brands";
 
 import axios from 'axios'
 
 export const useProductStore = defineStore('products', {
     state: () => ({
         products: [] as productProps[],
+        brands : [] as Brand[],
         productsLength : 0,
         loading : false,
         pagina : 1,
@@ -36,6 +38,10 @@ export const useProductStore = defineStore('products', {
             if(state.filters.title !== '' || state.filters.brand !== '' || state.filters.category !== ''){
                 return true
             }
+        },
+
+        $getBrands(state): Brand[]{
+            return state.brands
         }
     },
     actions: {
@@ -60,7 +66,7 @@ export const useProductStore = defineStore('products', {
         },
 
 
-        setFilter(key: string, value : string){
+        setFilter(key: string, value : string | Brand){
             // @ts-ignore
             this.filters[key] = value
         },
@@ -82,6 +88,10 @@ export const useProductStore = defineStore('products', {
             } else {
                 return ''
             }
+        },
+
+        setBrands(brands : Brand[]){
+            this.brands = brands
         }
     },
 })
