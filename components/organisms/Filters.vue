@@ -157,8 +157,8 @@ const brandOrdered = computed(() => {
     })
 })
 
-onMounted(() =>{
-  getUniqueColumnValues();
+onMounted(async () =>{
+  await getUniqueColumnValues();
 })
 
 </script>
