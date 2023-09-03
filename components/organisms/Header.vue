@@ -1,5 +1,5 @@
 <template>
-    <header class="w-full h-[120px] bg-black fixed top-0 left-0 right-0 z-30">
+    <header class="w-full el-col-xs-push-24 h-[120px] bg-black fixed top-0 left-0 right-0 z-30">
       <Container>
         <div class="w-full h-[80px] flex items-center justify-between px-4">
             <NuxtLink to="/">
@@ -44,8 +44,9 @@
               </NuxtLink>
             </li>
           </ul>
-          <div class="xs:flex justify-center md:hidden">
-            <Search />
+
+          <div class="w-full xs:flex md:hidden">
+            <SearchMobile />
           </div>
       </nav>
     </header>
@@ -55,6 +56,7 @@
 <script setup lang="ts">
 import { List } from 'lucide-vue-next';
 import { useProductStore } from  '@/store/products'
+import SearchMobile from "~/components/molecules/SearchMobile.vue";
 
 const store = useProductStore()
 

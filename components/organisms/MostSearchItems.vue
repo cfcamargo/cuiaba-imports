@@ -2,7 +2,7 @@
   <Container v-if="mostProducts.length > 0">
     <div class="w-full py-4 pb-4">
       <div class="w-full py-10 flex justify-start">
-        <h4 class="text-xl font-bold text-zinc-950">Itens Mais Buscados</h4>
+        <h4 class="text-xl font-bold text-zinc-950 px-2">Itens Mais Buscados</h4>
       </div>
       <div v-if="loading" class="grid grid-cols-4">
         <div v-for="item in slidesPerView" :key="item">
