@@ -41,9 +41,6 @@
               </NuxtLink>
             </li>
           </ul>
-
-
-
       </aside>
     </transition>
 </template>

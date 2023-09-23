@@ -10,18 +10,16 @@
         <span class="font-bold">Marca</span>
         <ChevronDown class="transform transition-all ease-in" :class="brandShow ? 'rotate-180' : 'rotate-0'"/>
       </div>
-      <transition enter-active-class="animate__animated animate__fadeInDown" leave-active-class="animate__animated animate__fadeOutUp">
-        <ul class="flex flex-col gap-2 px-2" v-show="brandShow">
-          <li
-              v-for="brand in brandOrdered"
-              :key="brand"
-              class="transform hover:font-bold hover:scale-105"
-              @click="fetchProductByFilter('brand', brand)"
-          >
-            {{ brand }}
-          </li>
-        </ul>
-      </transition>
+      <ul class="flex flex-col gap-2 px-2" v-show="brandShow">
+        <li
+            v-for="brand in brandOrdered"
+            :key="brand"
+            class="transform hover:font-bold hover:scale-105"
+            @click="fetchProductByFilter('brand', brand)"
+        >
+          {{ brand }}
+        </li>
+      </ul>
     </div>
 
     <div class="flex flex-col gap-4">
@@ -29,18 +27,16 @@
         <div class="font-bold">Categoria</div>
         <ChevronDown class="transform transition-all ease-in" :class="categoryShow ? 'rotate-180' : 'rotate-0'"/>
       </div>
-      <transition enter-active-class="animate__animated animate__fadeInDown" leave-active-class="animate__animated animate__fadeOutUp">
-        <ul class="flex flex-col gap-2 px-2" v-show="categoryShow">
-          <li
-              v-for="category in categoryOrdered"
-              :key="category"
-              class="transform hover:font-bold hover:scale-105 cursor-pointer"
-              @click="fetchProductByFilter('category', category)"
-          >
-            {{ category }}
-          </li>
-        </ul>
-      </transition>
+      <ul class="flex flex-col gap-2 px-2" v-show="categoryShow">
+        <li
+            v-for="category in categoryOrdered"
+            :key="category"
+            class="transform hover:font-bold hover:scale-105 cursor-pointer"
+            @click="fetchProductByFilter('category', category.value)"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
     </div>
 
   </div>
@@ -73,21 +69,22 @@ interface Brand {
 }
 
 const categories = [
-    'Celular',
-    'Carregador',
-    'Tablet',
-    'Notebook',
-    'Smartwatch',
-    'Receptor',
-    'Caixa de Som',
-    'Teclado',
-    'Fone de Ouvido',
-    'Televisores',
-    'Roteadores',
-    'Repetidores',
-    'Suportes',
-    'Amplificadores',
-    'Tabacaria'
+  {name: 'Celulares', value: 'Celular'},
+  {name: 'Carregadores', value: 'Carregador'},
+  {name: 'Tablets', value: 'Tablet'},
+  {name: 'Notebooks', value: 'Notebook'},
+  {name: 'Smartwatches', value: 'Smartwatch'},
+  {name: 'Receptores', value: 'Receptor'},
+  {name: 'Caixas de Som', value: 'Caixa de Som'},
+  {name: 'Teclados', value: 'Teclado'},
+  {name: 'Fones de Ouvido', value: 'Fone de Ouvido'},
+  {name: 'Televisores', value: 'Televisores'},
+  {name: 'Roteadores', value: 'Roteadores'},
+  {name: 'Repetidores', value: 'Repetidores'},
+  {name: 'Suportes', value: 'Suportes'},
+  {name: 'Amplificadores', value: 'Amplificadores'},
+  {name: 'Tabacaria', value: 'Tabacaria'},
+  {name: 'Alto Falantes', value: 'Alto Falante'},
 ]
 
 async function getUniqueColumnValues() {

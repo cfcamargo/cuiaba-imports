@@ -7,7 +7,10 @@
         </div>
       </Container>
     </div>
-    <ProductShowTemplate :product="product" v-else/>
+    <div v-else>
+      <ProductShowTemplate :product="product"/>
+      <MostSearchItems/>
+    </div>
   </NuxtLayout>
 </template>
 

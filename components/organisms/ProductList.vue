@@ -31,8 +31,8 @@
             </div>
           </div>
 
-          <div v-else-if="props.products?.length > 0" class="flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <div v-for="product in props.products" :key="product.id">
+          <div v-else-if="props.products?.length > 0" class="max-h-[400px] flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div v-for="product in props.products" :key="product.id" class="max-h-[400px]">
               <ProductCard :product="product"/>
             </div>
           </div>

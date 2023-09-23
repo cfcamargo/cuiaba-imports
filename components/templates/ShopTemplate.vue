@@ -1,7 +1,7 @@
 <template>
     <ShopSlider />
-    <MostSearchItems/>
     <ProductList :products="store.$getProducts" />
+    <MostSearchItems/>
 </template>
 
 <script setup lang="ts">
