@@ -2,7 +2,10 @@ export default defineNuxtConfig({
   // @ts-ignore
   css: ['@/assets/main.css'],
   components : [{path: '@/components', pathPrefix : false}],
-  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt'],
+  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt', '@nuxtjs/sitemap'],
+  sitemap: {
+    hostname: 'https://www.cuiabaimports.com/',
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
