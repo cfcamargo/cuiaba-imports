@@ -2,10 +2,7 @@ export default defineNuxtConfig({
   // @ts-ignore
   css: ['@/assets/main.css'],
   components : [{path: '@/components', pathPrefix : false}],
-  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt', '@nuxtjs/sitemap'],
-  sitemap: {
-    hostname: 'https://www.cuiabaimports.com/',
-  },
+  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt', 'nuxt-simple-sitemap'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -28,5 +25,8 @@ export default defineNuxtConfig({
   },
   env: {
     API_URL: process.env.API_URL
+  },
+  site: {
+    url: 'https://www.cuiabaimports.com/',
   },
 })
