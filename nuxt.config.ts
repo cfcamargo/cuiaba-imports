@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       meta : [
         { name : 'description', content : 'Descubra os melhores eletrônicos na nossa loja. Smartphones, TVs e mais. Produtos autênticos das melhores marcas. Entrega rápida. Atendimento ao cliente de qualidade. Visite-nos agora!'},
+        { name : "google-site-verification", content: "cji91_zS7hsO9du2rkxUfEC0Hjx8RkSK9tOfKlvawOs" }
       ],
       link : [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
