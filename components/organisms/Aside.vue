@@ -5,13 +5,13 @@
             <X color="white" :size="25"/>
           </button>
 
-          <ul class="flex flex-col gap-8 items-end px-4 py-8 w-full">
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'celular')">Celulares</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Carregador')">Carregadores</li>
-            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Fone de ouvido')">Fones De Ouvido</li>
+          <ul class="flex flex-col gap-4 items-end px-4 py-8 w-full">
+            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', category.value)" v-for="category in categories">{{ category.name}}</li>
+<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>-->
+<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>-->
+<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>-->
+<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Carregador')">Carregadores</li>-->
+<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Fone de ouvido')">Fones De Ouvido</li>-->
           </ul>
 
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light ">
@@ -72,5 +72,25 @@ async function fetchProductByFilter(key:string, value :string){
  const props = defineProps({
    show : Boolean
  })
+
+
+const categories = [
+  {name: 'Celulares', value: 'Celular'},
+  {name: 'Carregadores', value: 'Carregador'},
+  {name: 'Tablets', value: 'Tablet'},
+  {name: 'Notebooks', value: 'Notebook'},
+  {name: 'Smartwatches', value: 'Smartwatch'},
+  {name: 'Receptores', value: 'Receptor'},
+  {name: 'Caixas de Som', value: 'Caixa de Som'},
+  {name: 'Teclados', value: 'Teclado'},
+  {name: 'Fones de Ouvido', value: 'Fone de Ouvido'},
+  {name: 'Televisores', value: 'Televisores'},
+  {name: 'Roteadores', value: 'Roteadores'},
+  {name: 'Repetidores', value: 'Repetidores'},
+  {name: 'Suportes', value: 'Suportes'},
+  {name: 'Amplificadores', value: 'Amplificadores'},
+  {name: 'Tabacaria', value: 'Tabacaria'},
+  {name: 'Alto Falantes', value: 'Alto Falante'},
+]
 
 </script>

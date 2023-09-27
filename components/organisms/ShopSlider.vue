@@ -1,7 +1,7 @@
 <template>
     <div class="w-full relative">
       <Swiper
-          :modules="[SwiperAutoplay, Navigation ]"
+          :modules="[SwiperAutoplay, SwiperNavigation ]"
           :slides-per-view="1"
           :loop="true"
           :effect="'creative'"
@@ -23,9 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { Navigation } from "swiper";
-
-
 const slides = ref([
     'https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-multiproduct-hero-full-suite.png',
     'https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/12/samsung-galaxy-z-fold-4-and-flip-4-on-a-gray-table-top.jpg',

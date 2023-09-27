@@ -10,7 +10,7 @@
         </div>
       </div>
       <Swiper
-          :modules="[SwiperAutoplay, Navigation ]"
+          :modules="[SwiperAutoplay, SwiperNavigation ]"
           :slides-per-view="slidesPerView"
           :loop="true"
           :effect="'creative'"
@@ -31,9 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import {Navigation} from "swiper";
-import {SymbolKind} from "vscode-languageserver-types";
-import Array = SymbolKind.Array;
 import productProps from "~/models/Product";
 import axios from "axios";
 

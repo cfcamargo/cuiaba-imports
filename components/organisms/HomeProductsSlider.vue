@@ -13,7 +13,7 @@
 
       <div v-else>
         <Swiper
-            :modules="[SwiperAutoplay, Navigation ]"
+            :modules="[SwiperAutoplay, SwiperNavigation]"
             :slides-per-view="slidesPerView"
             :loop="true"
             :effect="'creative'"
@@ -50,7 +50,6 @@
 </template>
 
 <script setup lang="ts">
-import {Navigation} from "swiper";
 import axios from "axios";
 import productProps from "~/models/Product";
 

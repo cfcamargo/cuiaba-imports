@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   // @ts-ignore
   css: ['@/assets/main.css'],
   components : [{path: '@/components', pathPrefix : false}],
-  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt', 'nuxt-simple-sitemap'],
+  modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -10,8 +10,8 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    title : 'Cuiabá Imports',
     head: {
+      title : 'Cuiabá Imports',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       meta : [
@@ -23,10 +23,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  env: {
-    API_URL: process.env.API_URL
-  },
-  site: {
-    url: 'https://www.cuiabaimports.com/',
-  },
+  // env: {
+  //   API_URL: process.env.API_URL
+  // },
 })

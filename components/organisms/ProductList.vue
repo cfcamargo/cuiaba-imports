@@ -1,15 +1,15 @@
 <template>
   <Container>
     <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0" id="products">
-      <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
+        <div class="flex items-center justify-between">
+          <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
 
-        <div class="xs:flex md:hidden">
-          <el-button @click="toggleFilterInMobile" >Filtros</el-button>
+          <div class="xs:flex md:hidden">
+            <el-button @click="toggleFilterInMobile" >Filtros</el-button>
+          </div>
         </div>
-      </div>
-      <div >
-        <div class="flex gap-4">
+        <div >
+        <div class="flex flex-1 gap-4 min-h-min">
           <div class="w-2/12 py-4 px-2 rounded xs:hidden md:flex">
             <Filters />
           </div>
@@ -31,7 +31,7 @@
             </div>
           </div>
 
-          <div v-else-if="props.products?.length > 0" class="max-h-[400px] flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div v-else-if="props.products?.length > 0" class="min-h-[400px] flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div v-for="product in props.products" :key="product.id" class="max-h-[400px]">
               <ProductCard :product="product"/>
             </div>

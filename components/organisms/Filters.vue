@@ -22,22 +22,22 @@
       </ul>
     </div>
 
-    <div class="flex flex-col gap-4">
-      <div class="flex justify-between cursor-pointer" @click="tooogleCategoryShow">
-        <div class="font-bold">Categoria</div>
-        <ChevronDown class="transform transition-all ease-in" :class="categoryShow ? 'rotate-180' : 'rotate-0'"/>
-      </div>
-      <ul class="flex flex-col gap-2 px-2" v-show="categoryShow">
-        <li
-            v-for="category in categoryOrdered"
-            :key="category"
-            class="transform hover:font-bold hover:scale-105 cursor-pointer"
-            @click="fetchProductByFilter('category', category.value)"
-        >
-          {{ category.name }}
-        </li>
-      </ul>
-    </div>
+<!--    <div class="flex flex-col gap-4">-->
+<!--      <div class="flex justify-between cursor-pointer" @click="tooogleCategoryShow">-->
+<!--        <div class="font-bold">Categoria</div>-->
+<!--        <ChevronDown class="transform transition-all ease-in" :class="categoryShow ? 'rotate-180' : 'rotate-0'"/>-->
+<!--      </div>-->
+<!--      <ul class="flex flex-col gap-2 px-2" v-show="categoryShow">-->
+<!--        <li-->
+<!--            v-for="category in categoryOrdered"-->
+<!--            :key="category"-->
+<!--            class="transform hover:font-bold hover:scale-105 cursor-pointer"-->
+<!--            @click="fetchProductByFilter('category', category.value)"-->
+<!--        >-->
+<!--          {{ category.name }}-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
 
   </div>
 </template>
