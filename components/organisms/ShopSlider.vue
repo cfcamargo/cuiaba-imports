@@ -24,6 +24,7 @@
 
 <script setup lang="ts">
 const slides = ref([
+    '/iphone15home.png',
     'https://www.insight.com/content/dam/insight-web/en_US/store/apple/apple-multiproduct-hero-full-suite.png',
     'https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/12/samsung-galaxy-z-fold-4-and-flip-4-on-a-gray-table-top.jpg',
     'https://i0.wp.com/corecart.pk/wp-content/uploads/2022/09/Weekly-Deals-1.png?resize=1920%2C770&ssl=1',

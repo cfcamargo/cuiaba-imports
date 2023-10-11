@@ -18,27 +18,27 @@
       </Container>
       <nav class="w-full h-[40px] flex justify-center items-center xs:bg-zinc-900 md:bg-zinc-800">
           <ul class="xs:hidden md:flex items-center gap-10 font-light ">
-            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
+            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer border-b-2 border-transparent" :class="{ 'border-b-white': isActive('home') }">
               <NuxtLink to="/">
                   Home
               </NuxtLink>
             </li>
-            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
+            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer border-b-2 border-transparent"  :class="{ 'border-b-white': isActive('shop') }">
               <NuxtLink to="/shop" @click="resetFilters">
                 Loja
               </NuxtLink>
             </li>
-            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
+            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer border-b-2 border-transparent"  :class="{ 'border-b-white': isActive('assistence') }">
               <NuxtLink to="/assistence">
                 Assistência Técnica
               </NuxtLink>
             </li>
-            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
+            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer border-b-2 border-transparent"  :class="{ 'border-b-white': isActive('about') }">
               <NuxtLink to="/about">
                 Sobre
               </NuxtLink>
             </li>
-            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer">
+            <li class="text-zinc-200 hover:text-zinc-50 cursor-pointer border-b-2 border-transparent">
               <NuxtLink to="/contact">
                 Contato
               </NuxtLink>
@@ -73,4 +73,15 @@ async function resetFilters(){
     }
 
 }
+
+const route = useRoute();
+
+const isActive = (routeName: string) => {
+  // Verifica se a rota desejada é "home" e se a rota atual é "index" (ou seja, "/")
+  if (routeName === 'home' && route.name === 'index') {
+    return true;
+  }
+  // Para outras rotas, verifica se o nome da rota é o mesmo que o fornecido
+  return route.name === routeName;
+};
 </script>

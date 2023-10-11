@@ -6,11 +6,11 @@
           <div v-if="props.product?.cover === ''" class="mx-auto h-[450px] max-w-[300px]">
             <ImageNotFound />
           </div>
-          <img :src="props.product?.cover" class="h-[450px]" v-else>
+          <img :src="props.product?.cover" class="xs:h-[200px] md:h-[450px]" v-else>
         </div>
-        <div class="flex flex-col xs:px-10 md:px-0">
+        <div class="flex flex-col xs:px-4 md:px-0">
           <div class="flex flex-col py-10">
-            <h3 class="font-bold text-2xl w-full max-w-[400px]">{{props.product.title}}</h3>
+            <h3 class="font-bold text-2xl w-full max-w-[400px]">{{props.product?.title}}</h3>
             <span v-if="props.product?.sub">{{props.product.sub}}</span>
           </div>
 
@@ -33,11 +33,11 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col px-10">
+      <div class="flex flex-col xs:px-4 md:px-10">
         <div class="flex flex-col gap-8 pb-10">
           <h4 class="font-semibold text-lg">Descrição</h4>
           <p>
-            {{ props.product.description }}
+            {{ props.product?.description }}
           </p>
         </div>
         <div class="pt-10 pb-20" v-if="props.product?.videoURL">
