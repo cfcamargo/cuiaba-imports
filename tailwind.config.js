@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'home-banner': "url('/iphone15home.png')",
+        'home-banner': "url('/home_banner.png')",
         'tecnical-cel': "url('/tecnical_cel.png')",
       },
       screens: {

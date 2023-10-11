@@ -5,6 +5,7 @@
               <div class="flex flex-col gap-4">
                 <h2 class="text-4xl font-bold text-gray-950">Assistência Técnica Especializada</h2>
                 <p class="text-gray-900">"Possuimos uma assistência técnica especializada em celulares, tablets e notebooks. Nossa equipe altamente qualificada oferece soluções rápidas e confiáveis para os seus dispositivos. Priorizamos a satisfação do cliente, garantindo excelência e transparência em cada atendimento. Conte com a nossa expertise para superar seus problemas técnicos. Entre em contato hoje mesmo."</p>
+                <WhatsappButton class="w-[240px] flex justify-center" text="Solicitar Orçamento"/>
               </div>
               <div class="w-[500px] ml-auto">
                 <div ref="animationContainer"></div>
