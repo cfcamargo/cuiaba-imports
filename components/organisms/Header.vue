@@ -3,7 +3,7 @@
       <Container>
         <div class="w-full h-[80px] flex items-center justify-between px-4">
             <NuxtLink to="/">
-                <Logo :icon_width="80"/>
+                <SecondaryLogo />
             </NuxtLink>
 
             <div class="xs:hidden md:flex">
