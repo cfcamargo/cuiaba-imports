@@ -17,7 +17,7 @@
             class="transform hover:font-bold hover:scale-105"
             @click="fetchProductByFilter('brand', brand)"
         >
-          {{ brand }}
+          {{ brand.toUpperCase() }}
         </li>
       </ul>
     </div>
