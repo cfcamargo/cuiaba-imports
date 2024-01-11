@@ -7,11 +7,6 @@
 
           <ul class="flex flex-col gap-4 items-end px-4 py-8 w-full">
             <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', category.value)" v-for="category in categories">{{ category.name}}</li>
-<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Notebook')">Notebooks</li>-->
-<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Acessorio')">Acessórios</li>-->
-<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('category', 'Camera')">Cameras</li>-->
-<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Carregador')">Carregadores</li>-->
-<!--            <li class="text-zinc-200 font-normal hover:font-bold hover:text-zinc-400 hover:border-r-4 hover:px-2 border-zinc-600 cursor-pointer" @click="fetchProductByFilter('title', 'Fone de ouvido')">Fones De Ouvido</li>-->
           </ul>
 
           <ul class="xs:flex md:hidden flex-col items-end gap-8 px-4 font-light border-t py-6">
@@ -76,6 +71,7 @@ async function fetchProductByFilter(key:string, value :string){
 
 const categories = [
   {name: 'Celulares', value: 'Celular'},
+  {name: 'Acessórios', value: 'Acessorio'},
   {name: 'Carregadores', value: 'Carregador'},
   {name: 'Tablets', value: 'Tablet'},
   {name: 'Notebooks', value: 'Notebook'},
