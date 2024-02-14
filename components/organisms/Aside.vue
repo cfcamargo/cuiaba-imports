@@ -87,6 +87,7 @@ const categories = [
   {name: 'Amplificadores', value: 'Amplificadores'},
   {name: 'Tabacaria', value: 'Tabacaria'},
   {name: 'Alto Falantes', value: 'Alto Falante'},
+  {name: 'Drones', value: 'Drone'},
 ]
 
 </script>
