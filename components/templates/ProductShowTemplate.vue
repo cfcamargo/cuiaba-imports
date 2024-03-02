@@ -27,7 +27,7 @@
 
             <button class="flex gap-2 rounded-full px-4 py-2 bg-green-500 text-white items-center w-[250px] justify-center mt-10" @click="handleReserveProduct">
               <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-white'"/>
-              <span>Falar com vendedor</span>
+              <span>Solicitar Orçamento</span>
             </button>
 
           </div>
