@@ -80,7 +80,7 @@ const categories = [
   {name: 'Caixas de Som', value: 'Caixa de Som'},
   {name: 'Teclados', value: 'Teclado'},
   {name: 'Fones de Ouvido', value: 'Fone de Ouvido'},
-  {name: 'Televisores', value: 'Televisores'},
+  {name: 'Televisores', value: 'Televisor'},
   {name: 'Roteadores', value: 'Roteadores'},
   {name: 'Repetidores', value: 'Repetidores'},
   {name: 'Suportes', value: 'Suportes'},
