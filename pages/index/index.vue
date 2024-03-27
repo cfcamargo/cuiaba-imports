@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <HomeTemplate />
+    <ShopTemplate />
   </NuxtLayout>
 </template>
 

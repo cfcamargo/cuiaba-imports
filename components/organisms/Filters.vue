@@ -94,6 +94,7 @@ async function getUniqueColumnValues() {
 
   try {
     const response = await axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`);
+    console.log(response)
     const rows = response.data.values;
 
     if (rows.length) {
