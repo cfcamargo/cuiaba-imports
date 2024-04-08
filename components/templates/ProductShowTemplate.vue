@@ -70,7 +70,7 @@ const invalidVariant = ref<Boolean>(false)
 
 function changeVariant(variant : string){
     invalidVariant.value = false
-    if( variant === variantSelected.value ){
+    if(variant === variantSelected.value){
       variantSelected.value = ''
     } else {
       variantSelected.value = variant
@@ -107,7 +107,7 @@ function getYouTubeVideoId(url: string | undefined): String{
 
 
 function openReserveLink(){
-    const message = `Olá! eu gostaria do Orçamento de um ${props.product?.title} na versão de ${variantSelected.value}`
+    const message =  props.product?.variants[0] !== '' ? `Olá! eu gostaria do Orçamento de um ${props.product?.title} na versão de ${variantSelected.value}` : `Olá! eu gostaria do Orçamento de um ${props.product?.title}.`
     const url = `https://api.whatsapp.com/send?phone=5567984513860&text=${message}`
 
     window.open(url, '_blank')

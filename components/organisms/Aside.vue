@@ -44,6 +44,8 @@
 import { X } from 'lucide-vue-next'
 import { useProductStore } from '@/store/products'
 
+import Categories  from '@/models/Categories'
+
 const router = useRouter()
 
 const store= useProductStore()
@@ -69,26 +71,6 @@ async function fetchProductByFilter(key:string, value :string){
  })
 
 
-const categories = [
-  {name: 'Celulares', value: 'Celular'},
-  {name: 'Acessórios', value: 'Acessorio'},
-  {name: 'Carregadores', value: 'Carregador'},
-  {name: 'Tablets', value: 'Tablet'},
-  {name: 'Notebooks', value: 'Notebook'},
-  {name: 'Smartwatches', value: 'Smartwatch'},
-  {name: 'Receptores', value: 'Receptor'},
-  {name: 'Caixas de Som', value: 'Caixa de Som'},
-  {name: 'Teclados', value: 'Teclado'},
-  {name: 'Fones de Ouvido', value: 'Fone de Ouvido'},
-  {name: 'Televisores', value: 'Televisor'},
-  {name: 'Roteadores', value: 'Roteadores'},
-  {name: 'Repetidores', value: 'Repetidores'},
-  {name: 'Suportes', value: 'Suportes'},
-  {name: 'Amplificadores', value: 'Amplificadores'},
-  {name: 'Tabacaria', value: 'Tabacaria'},
-  {name: 'Alto Falantes', value: 'Alto Falante'},
-  {name: 'Drones', value: 'Drone'},
-  {name: 'Óculos VR', value: 'Óculos VR'},
-]
+const categories = Categories
 
 </script>

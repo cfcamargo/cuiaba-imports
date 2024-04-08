@@ -18,6 +18,9 @@ const Categories = [
     {name: 'Alto Falantes', value: 'Alto Falante'},
     {name: 'Drones', value: 'Drone'},
     {name: 'Óculos VR', value: 'Óculos VR'},
+    {name: 'Câmera Digital', value: 'CÂMERA DIGITAL'},
+    {name: 'Câmera de Segurança', value: 'CÂMERA DE SEGURANCA'},
+    {name: 'Games', value: 'GAMES'},
   ]
 
 export default Categories

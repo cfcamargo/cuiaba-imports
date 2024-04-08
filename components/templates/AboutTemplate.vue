@@ -21,13 +21,13 @@
               </p>
             </div>
             <div>
-              <img src="/about1.png" class="object-cover h-full"/>
+              <img src="/about1.png" class="object-cover h-full max-h-[900px]"/>
             </div>
           </div>
 
           <div class="xs:flex xs:flex-col-reverse md:grid  md:grid-cols-2 gap-20 mt-20 items-center">
             <div>
-              <img src="/about2.png" class="object-cover h-full"/>
+              <img src="/about2.png" class="object-cover h-full max-h-[600px]"/>
             </div>
             <div class="flex flex-col gap-4">
               <h4 class="text-zinc-900 text-2xl font-bold text-right">Missão</h4>

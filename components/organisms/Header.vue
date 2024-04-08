@@ -76,6 +76,7 @@ const store = useProductStore()
 const asideShow = ref(false)
 const submenu = ref(false)
 
+const router = useRouter()
 
 const categories = Categories
 
@@ -93,22 +94,27 @@ async function resetFilters(){
 
 async function fetchProductByFilter(key:string, value :string){
     submenu.value = false
+    await router.push({name: 'shop'})
+
+    store.resetFilters()
+    store.setFilter(key, value)
+
+    await nextTick()
+
     const element = document.getElementById('products')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
-    store.resetFilters()
-    store.setFilter(key, value)
+
     await store.fetchProdutcs()
-    await nextTick()
-    
+
 }
 
 const route = useRoute();
 
 const isActive = (routeName: string) => {
   // Verifica se a rota desejada é "home" e se a rota atual é "index" (ou seja, "/")
-  if (routeName === 'home' && route.name === 'index') {
+  if (routeName === 'shop' && route.name === 'index') {
     return true;
   }
   // Para outras rotas, verifica se o nome da rota é o mesmo que o fornecido
