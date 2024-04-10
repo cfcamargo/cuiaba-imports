@@ -21,7 +21,6 @@ const Categories = [
     {name: 'Câmera Digital', value: 'CÂMERA DIGITAL'},
     {name: 'Câmera de Segurança', value: 'CÂMERA DE SEGURANCA'},
     {name: 'Games', value: 'GAMES'},
-    {name: 'Games', value: 'GAMES'},
     {name: 'Informática', value: 'INFORMATICA'},
   ]
 
