@@ -42,6 +42,17 @@ export const useProductStore = defineStore('products', {
 
         $getBrands(state): Brand[]{
             return state.brands
+        },
+        $getFilterKey() : any {
+            if(this.filters.brand !== ''){
+                    return this.filters.brand
+            }
+            if(this.filters.category !== ''){
+                    return this.filters.category
+            }
+            if(this.filters.title !== ''){
+                return this.filters.title
+            }
         }
     },
     actions: {

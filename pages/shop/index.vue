@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <ShopTemplate />
+    <ShopSearchTemplate />
   </NuxtLayout>
 </template>
 <script setup lang="ts">

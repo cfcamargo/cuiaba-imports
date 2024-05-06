@@ -61,7 +61,10 @@
   import { X } from 'lucide-vue-next'
 
   const props = defineProps({
-    products : Array<Array<productProps>>
+    products : {
+      type: Array as PropType<productProps[]>,
+      required: true
+    }
   })
 
   const mobileFilterShow = ref(false)
