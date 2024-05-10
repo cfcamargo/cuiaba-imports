@@ -94,7 +94,7 @@ async function resetFilters(){
 
 async function fetchProductByFilter(key:string, value :string){
     submenu.value = false
-    await router.push({name: 'shop'})
+    await router.push({ path: '/shop', query: { [key]: value } });
 
     store.resetFilters()
     store.setFilter(key, value)
