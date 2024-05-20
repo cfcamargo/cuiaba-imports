@@ -55,7 +55,7 @@ async function fetchProductByFilter(key:string, value :string){
     store.resetFilters()
     store.setFilter(key, value)
     emits('toogleShowAside')
-    await router.push({name: 'shop'})
+    await router.push({ path: '/shop', query: { [key]: value } });
     await store.fetchProdutcs()
 
     await nextTick()
