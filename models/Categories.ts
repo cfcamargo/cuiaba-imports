@@ -22,6 +22,7 @@ const Categories = [
     {name: 'Câmera de Segurança', value: 'CÂMERA DE SEGURANCA'},
     {name: 'Games', value: 'GAMES'},
     {name: 'Informática', value: 'INFORMATICA'},
+    {name: 'Perfumes', value: 'Perfumes'},
   ]
 
 export default Categories
