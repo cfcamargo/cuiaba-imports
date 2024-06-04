@@ -51,7 +51,7 @@
           </div>
 
           <transition enterActiveClass="animate__animated animate__fadeInDown" leaveActiveClass="animate__animated animate__fadeOutUp">
-            <div class="absolute w-full h-[300px] bg-gray-100 shadow top-[40px]" v-if="submenu">
+            <div class="absolute w-full h-[350px] bg-gray-100 shadow top-[40px]" v-if="submenu">
               <Container>
                 <ul class="grid grid-cols-4 gap-4 p-8">
                     <li v-for="(category, index) in categories" @click="fetchProductByFilter('category',category.value)" :key="index" class="cursor-pointer hover:text-gray-500 hover:underline" >
