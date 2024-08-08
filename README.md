@@ -1,63 +1,25 @@
-# Nuxt 3 Minimal Starter
+# Projeto: Integração de Planilha Google para Loja de Produtos Eletrônicos
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Descrição do Projeto:**
 
-## Setup
+Este projeto foi desenvolvido para uma empresa especializada na venda de produtos eletrônicos. Utilizando Nuxt.js, Vue.js e Tailwind CSS no front-end e Adonis JS no back-end, o objetivo principal foi replicar uma planilha do Google em um site, permitindo a listagem dinâmica dos produtos da loja.
 
-Make sure to install the dependencies:
+**Detalhes do Projeto:**
 
-```bash
-# npm
-npm install
+- **Tecnologias Utilizadas:**
+  - **Front-end:** Nuxt.js, Vue.js, Tailwind CSS
+  - **Back-end:** Adonis JS
+- **Objetivo:** Desenvolver um site que exiba os produtos eletrônicos da loja, replicando os dados de uma planilha do Google.
+- **Funcionalidades Principais:**
+  - **Front-end:**
+    - Utilização de Nuxt.js, Vue.js e Tailwind CSS para criar uma interface de usuário moderna e responsiva.
+    - Listagem de produtos com paginação para melhorar a navegação e a experiência do usuário.
+  - **Back-end:**
+    - Criação de uma API utilizando Adonis JS para buscar dados da planilha do Google.
+    - Implementação de funcionalidades de paginação na API para gerenciar eficientemente a exibição dos produtos.
+- **Benefícios Esperados:**
+  - Atualização dinâmica dos produtos conforme os dados da planilha são modificados.
+  - Melhoria na experiência do usuário com uma navegação fluida e organizada.
+  - Facilidade para o cliente gerenciar e atualizar os produtos listados no site através da planilha Google.
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Este projeto facilita a gestão de produtos da loja eletrônica, integrando tecnologias modernas para garantir uma operação eficiente e uma experiência de usuário aprimorada.
