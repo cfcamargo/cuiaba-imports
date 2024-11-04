@@ -75,10 +75,12 @@
     store.setPaginate(value)
     await store.fetchProdutcs(value)
 
+
     await nextTick()
 
     const element = document.getElementById('products')
     if (element) {
+        console.log(element)
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
@@ -94,4 +96,3 @@
 
 
 </script>
-

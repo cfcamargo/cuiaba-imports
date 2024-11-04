@@ -1,6 +1,6 @@
 <template>
     <Container class="py-10">
-        <div>
+        <div id="search-products-list">
             <h3 class="text-2xl">Exibindo resultados para: {{ store.$getFilterKey }}</h3>
         </div>
         <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid xs:grid-cols-1 md:grid-cols-3 gap-4">
@@ -36,6 +36,10 @@ const store = useProductStore()
 
 async function changePaginate(value : number){
     store.setPaginate(value)
+    const element = document.getElementById('search-products-list')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
     await store.fetchProdutcs(value)
 }
 
@@ -52,4 +56,3 @@ onMounted(async () => {
     await store.fetchProdutcs()
 })
 </script>
-

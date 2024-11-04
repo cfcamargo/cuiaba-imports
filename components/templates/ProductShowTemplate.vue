@@ -16,7 +16,7 @@
 
           <div>
             <span v-if="props.product?.variants[0] !== ''">Selecione a versão</span>
-            <div class="flex gap-4 py-4" v-if="props.product?.variants[0] !== ''">
+            <div class="xs:grid xs:grid-cols-2 md:flex gap-4 py-4 w-full flex-wrap" v-if="props.product?.variants[0] !== ''">
               <button type="button" @click="changeVariant(variant)" class="rounded-full px-4 py-1 border border-gray-900 font-semibold cursor-pointer" v-for="variant in props.product?.variants"  :class="[variant === variantSelected ? 'bg-gray-800 text-gray-200' : '' , variantSelected === '' && invalidVariant ? 'border-red-500' : '']">
                 {{variant}}
               </button>
@@ -25,7 +25,7 @@
               <span class="text-xs text-red-500" v-show="invalidVariant">Selecione uma versão para reservar </span>
             </transition>
 
-            <button class="flex gap-2 rounded-full px-4 py-2 bg-green-500 text-white items-center w-[250px] justify-center mt-10" @click="handleReserveProduct">
+            <button class="flex gap-2 rounded-full px-4 py-2 bg-green-500 text-white items-center xs:w-full md:w-[250px] justify-center mt-10" @click="handleReserveProduct">
               <WhatsappIcon :icon_height="20" :icon_width="20" :color="'text-white'"/>
               <span>Solicitar Orçamento</span>
             </button>

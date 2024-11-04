@@ -15,10 +15,9 @@ module.exports = {
         'tecnical-cel': "url('/tecnical_cel.png')",
       },
       screens: {
-        'xs': '360px',
+        'xs': '320px',
       }
     },
   },
   plugins: [],
 }
-
