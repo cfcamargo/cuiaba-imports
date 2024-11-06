@@ -1,14 +1,20 @@
 export default defineNuxtConfig({
   // @ts-ignore
   css: ['@/assets/main.css'],
+
   components : [{path: '@/components', pathPrefix : false}],
   modules: ['nuxt-swiper', '@pinia/nuxt', '@element-plus/nuxt'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
+  // env: {
+  //   API_URL: process.env.API_URL
+  // },
   app: {
     head: {
       title : 'Cuiabá Imports',
@@ -23,7 +29,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  // env: {
-  //   API_URL: process.env.API_URL
-  // },
+
+  compatibilityDate: '2024-11-06',
 })
