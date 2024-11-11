@@ -9,7 +9,7 @@
           </div>
         </div>
         <div >
-        <div class="flex flex-1 gap-4 min-h-min">
+        <div class="flex gap-4 h-auto">
           <div class="w-2/12 py-4 px-2 rounded xs:hidden md:flex">
             <Filters />
           </div>
@@ -25,30 +25,32 @@
             </div>
           </transition>
 
-          <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid xs:grid-cols-1 md:grid-cols-3 gap-4">
-            <div v-for="item in 15" :key="item" class="mx-auto h-[400px]">
-              <SkeltonLoading />
+          <div class="w-full">
+            <div v-if="store.$getLoadingStatus" class="w-full max-w-[1120px] mx-auto py-10 grid xs:grid-cols-1 md:grid-cols-3 gap-4">
+                <div v-for="item in 15" :key="item" class="mx-auto h-[400px]">
+                    <SkeltonLoading />
+                </div>
+            </div>
+
+            <div v-else-if="props.products?.length > 0" class="flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max">
+                <ProductCard :product="product" v-for="product in props.products" :key="product.id" class="max-h-[400px]"/>
+            </div>
+
+            <div v-else class="mx-auto py-20">
+              <Empty />
+            </div>
+            <div class="mx-auto py-6 flex justify-center items-center w-full">
+                <el-pagination
+                    background
+                    layout="prev, pager, next"
+                    @currentChange="changePaginate($event)"
+                    :total="store.$getProductsLength"
+                    :page-size="16"
+                    :current-page="store.$getPaginate"
+                    class="mx-auto"
+                />
             </div>
           </div>
-
-          <div v-else-if="props.products?.length > 0" class="flex-1 grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max">
-              <ProductCard :product="product" v-for="product in props.products" :key="product.id" class="max-h-[400px]"/>
-          </div>
-
-          <div v-else class="mx-auto py-20">
-            <Empty />
-          </div>
-        </div>
-        <div class="mx-auto py-6 flex justify-center items-center w-full">
-          <el-pagination
-              background
-              layout="prev, pager, next"
-              @currentChange="changePaginate($event)"
-              :total="store.$getProductsLength"
-              :page-size="16"
-              :current-page="store.$getPaginate"
-              class="mx-auto"
-          />
         </div>
       </div>
     </div>
