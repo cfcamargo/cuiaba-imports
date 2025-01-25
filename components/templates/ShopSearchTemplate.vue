@@ -14,14 +14,7 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <el-pagination
-                background
-                layout="prev, pager, next"
-                @currentChange="changePaginate($event)"
-                :total="store.$getProductsLength"
-                :page-size="16"
-                :current-page="store.$getPaginate"
-            />
+            <UPagination v-model="page" :page-count="5" :total="store.$getProductsLength" />
         </div>
     </Container>
 </template>
@@ -31,6 +24,7 @@ import {useProductStore} from '@/store/products'
 
 const router = useRouter()
 const route = useRoute()
+const page = ref(1)
 
 const store = useProductStore()
 
@@ -42,6 +36,10 @@ async function changePaginate(value : number){
     }
     await store.fetchProdutcs(value)
 }
+
+watch(page, (newValue, oldValue) => {
+    changePaginate(newValue)
+})
 
 
 onMounted(async () => {

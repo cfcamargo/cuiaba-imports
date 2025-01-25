@@ -6,4 +6,5 @@
 html, body {
     overflow-x : hidden;
     scroll-padding: 150px;
+    background: white;
 }

@@ -1,6 +1,6 @@
 <template>
       <Container>
-        <div class="flex flex-col gap-2 py-10 xs:px-4 md:px-2">
+        <div class="flex flex-col gap-2 py-10 xs:px-4 md:px-2 text-zinc-950">
           <h2 class="text-3xl font-bold text-zinc-900">Sobre a Cuiabá Imports</h2>
           <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-20 mt-16">
             <div class="flex flex-col gap-4">

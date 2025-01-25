@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0" id="products">
+    <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0 bg-white" id="products">
         <div class="flex items-center justify-between">
           <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
 
@@ -40,15 +40,7 @@
               <Empty />
             </div>
             <div class="mx-auto py-6 flex justify-center items-center w-full">
-                <el-pagination
-                    background
-                    layout="prev, pager, next"
-                    @currentChange="changePaginate($event)"
-                    :total="store.$getProductsLength"
-                    :page-size="16"
-                    :current-page="store.$getPaginate"
-                    class="mx-auto"
-                />
+                <UPagination v-model="page" :page-count="5" :total="store.$getProductsLength" />
             </div>
           </div>
         </div>
@@ -58,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-  import productProps from "~/models/Product";
+  import type productProps from "~/models/Product";
   import { useProductStore } from '@/store/products'
   import { X } from 'lucide-vue-next'
 
@@ -68,6 +60,8 @@
       required: true
     }
   })
+
+  const page = ref(1)
 
   const mobileFilterShow = ref(false)
 
@@ -96,5 +90,7 @@
     mobileFilterShow.value = !mobileFilterShow.value
   }
 
-
+  watch(page, (newValue, oldValue) => {
+    changePaginate(newValue)
+  })
 </script>
