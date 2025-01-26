@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <div>
+    <div class="text-zinc-950">
       <div class="grid xs:grid-cols-1 md:grid-cols-2 gap-10 py-10 pt-[120px]">
         <div class="flex justify-center">
           <div v-if="props.product?.cover === ''" class="mx-auto h-[450px] max-w-[300px]">
