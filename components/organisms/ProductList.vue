@@ -40,7 +40,7 @@
               <Empty />
             </div>
             <div class="mx-auto py-6 flex justify-center items-center w-full">
-                <UPagination v-model="page" :page-count="5" :total="store.$getProductsLength" />
+                <UPagination v-model="page" :page-count="5" :total="Math.ceil(store.$getProductsLength/15)" />
             </div>
           </div>
         </div>

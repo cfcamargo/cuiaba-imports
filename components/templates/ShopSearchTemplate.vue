@@ -1,5 +1,5 @@
 <template>
-    <Container class="py-10">
+    <Container class="py-10 text-zinc-900">
         <div id="search-products-list">
             <h3 class="text-2xl">Exibindo resultados para: {{ store.$getFilterKey }}</h3>
         </div>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <UPagination v-model="page" :page-count="5" :total="store.$getProductsLength" />
+            <UPagination v-model="page" :page-count="5" :total="Math.ceil(store.$getProductsLength/15)" />
         </div>
     </Container>
 </template>
