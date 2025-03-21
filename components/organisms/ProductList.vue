@@ -1,7 +1,7 @@
 <template>
   <Container>
     <div class="flex flex-col gap-6 w-full py-10 xs:px-2 md:px-0 bg-white" id="products">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between text-gray-950">
           <h4 class="text-xl font-bold">Produtos ({{store.$getProductsLength}})</h4>
 
           <div class="xs:flex md:hidden">
@@ -40,7 +40,7 @@
               <Empty />
             </div>
             <div class="mx-auto py-6 flex justify-center items-center w-full">
-                <UPagination v-model="page" :page-count="5" :total="store.$getProductsLength" />
+                <UPagination v-model="page" :page-count="1" :total="store.$getPagesTotal" />
             </div>
           </div>
         </div>

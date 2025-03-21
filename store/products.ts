@@ -9,6 +9,7 @@ export const useProductStore = defineStore("products", {
     products: [] as productProps[],
     brands: [] as Brand[],
     productsLength: 0,
+    pagesTotal: 0,
     loading: false,
     pagina: 1,
     filters: {
@@ -24,6 +25,10 @@ export const useProductStore = defineStore("products", {
 
     $getPaginate(state) {
       return state.pagina;
+    },
+
+    $getPagesTotal(state) {
+      return state.pagesTotal;
     },
 
     $getProductsLength(state) {
@@ -69,8 +74,10 @@ export const useProductStore = defineStore("products", {
       try {
         this.loading = true;
         const { data } = await axios.get(api_url);
+        console.log(data);
         this.products = data.products;
-        this.productsLength = data.links;
+        this.productsLength = data.total;
+        this.pagesTotal = data.links;
         this.loading = false;
       } catch (error) {
         console.error("An error occurred:", error);

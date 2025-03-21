@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="w-full flex justify-center">
-            <UPagination v-model="page" :page-count="5" :total="Math.ceil(store.$getProductsLength/15)" />
+            <UPagination v-model="page" :page-count="1" :total="store.$getPagesTotal" />
         </div>
     </Container>
 </template>
